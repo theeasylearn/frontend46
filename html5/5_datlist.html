@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align="center">
+        working with data list
+    </h1>
+    <hr>
+
+    <form action="">
+        <table border="1" cellpadding="10" align="center" >
+            <tr>
+                <td>
+                    <div><font size="4"><b>First Name</b></font></div>
+                    <input type="text" id="first" name="first" size="25">
+                </td>
+                <td>
+                    <div><font size="4"><b>Father Name</b></font></div>
+                    <input type="text" id="middle" name="middle" size="25">
+                </td>
+                <td>
+                    <div><font size="4"><b>Surname</b></font></div>
+                    <input type="text" id="last" name="last" size="25">
+                </td>
+            </tr>
+            
+            <tr>
+                <td colspan="3">
+                    <div><font size="4"><b>Enter Your Address Here</b></font></div>
+
+                    <textarea name="address" id="address" rows="6" cols="50"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div><font size="4"><b>City</b></font></div>
+                    <input type="text"  name="city" size="25" list="city">
+
+                    <datalist id="city">
+                        <option value="bhavnagar"></option>
+                        <option value="surat"></option>
+                    </datalist>
+                </td>
+                <td>
+                    <div><font size="4"><b>State</b></font></div>
+                    <input type="text" id="state" name="state" size="25" >
+                </td>
+                <td>
+                    <div><font size="4"><b>Country</b></font></div>
+                    <input type="text" id="country" name="country" size="25" >
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>
