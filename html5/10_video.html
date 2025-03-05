@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video</title>
+</head>
+<body>
+    
+    <h1 align="center">
+        working with video
+    </h1>
+    <hr>
+
+    
+    <!-- outside current folder -->
+    <!-- <video src="../html/car.mp4" width="40%"  controls>
+        <source type="video/mp4">
+    </video> -->
+    
+    <!-- inside current folder -->
+    <video src="./video/car.mp4" width="40%" controls autoplay  height="30%" loop muted poster="./logo.webp">
+        <source type="video/mp4">
+    </video>
+
+    <video src="./video/car.mp4" width="40%" controls  height="30%" loop muted poster="https://picsum.photos/400/300">
+        <source type="video/mp4">
+    </video>
+</body>
+</html>
