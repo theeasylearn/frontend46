@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="success.html" method="post">
+            <table border="1" cellpadding="10" align="center">
+                <tr bgcolor="black">
+                    <td colspan="2" align="center"><h1><font color="white">login</font></h1></td>
+                </tr>
+                <tr>
+                    <td><label for="name"><font size="5">full name :
+                            </font></label></td>
+                    <td><input type="text" name="name" id="name" size="40"></td>
+                </tr>
+                <tr>
+                    <td><label for="id"><font size="5">id
+                                no.</font></label></td>
+                    <td><input type="password" name="id" id="id" size="40"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="radio" name="login" id="login">
+                        <font
+                            size="5"><label for="login">student</label>
+                        </font>
+
+                        <input type="radio" name="login" id="login">
+                        <font
+                            size="5"><label for="login">teacher</label>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="Student Login" formaction="./student.html">
+                        <input type="submit" value="Teacher Login" formaction="./teacher.html">
+                        <input type="submit" >
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

@@ -6,14 +6,14 @@
     <title>forms</title>
 </head>
 <body>
-    <form action="./success.html" method="post">
+    <form action="./success.html" method="post" autocomplete="on" >
         <table border="1" cellpadding="10" align="center">
             <tr>
                 <td>
                     <label for="name"><font size="5">username : </font></label>
                 </td>
                 <td>
-                    <input type="text" name="name" id="name" size="30">
+                    <input type="text" name="name" id="name" size="30" autocomplete="on" autofocus placeholder="full name here">
                 </td>
             </tr>
             <tr>
@@ -21,7 +21,7 @@
                     <label for="date"><font size="5">Birth date : </font></label>
                 </td>
                 <td>
-                    <input type="date" name="date" id="date" >
+                    <input type="date" name="date" id="date" min="2025-03-10" max="2025-03-12">
                 </td>
             </tr>
             <tr>
@@ -37,7 +37,7 @@
                     <label for="email"><font size="5">enter your email : </font></label>
                 </td>
                 <td>
-                    <input type="email" name="email" id="email" size="30">
+                    <input type="email" name="email" id="email" size="30" autocomplete="off" placeholder="ex.abc@gmail.com">
                 </td>
             </tr>
             <tr>
@@ -45,7 +45,7 @@
                     <label for="pass"><font size="5">password : </font></label>
                 </td>
                 <td>
-                    <input type="password" name="pass" id="pass" size="30">
+                    <input type="password" name="pass" id="pass" size="30" placeholder="ex.12456">
                 </td>
             </tr>
             <tr>
@@ -53,7 +53,7 @@
                     <label for="age"><font size="5">age : </font></label>
                 </td>
                 <td>
-                    <input type="number" name="age" id="age"  >
+                    <input type="number" name="age" id="age" min="18" max="100" >
                 </td>
             </tr>
             <tr>
@@ -90,11 +90,33 @@
             </tr>
 
             <tr>
+                <td>
+                    <label for="gender"><font size="5">gender </font></label>
+                </td>
+                <td>
+                    <input type="radio" name="gender" id="gender" > male 
+                    <input type="radio" name="gender" id="gender" > female
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="gender"><font size="5">laguage </font></label>
+                </td>
+                <td>
+                    <input type="checkbox" name="eng" id="eng" > english
+                    <input type="checkbox" name="hindi" id="hindi" > hindi
+                    <input type="checkbox" name="gujrati" id="gujrati" > gujrati
+                </td>
+            </tr>
+
+            <tr>
                 <td colspan="2" align="center">
                     <button type="submit"><font size="5">Register</font></button>
                     <button type="reset"><font size="5">clear all</font></button>
                 </td>
             </tr>
+
+            
         </table>
     </form>
 </body>
