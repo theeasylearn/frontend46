@@ -6,14 +6,14 @@
     <title>forms</title>
 </head>
 <body>
-    <form action="./success.html" method="post" autocomplete="on" >
+    <form action="./success.html" method="post" autocomplete="on">
         <table border="1" cellpadding="10" align="center">
             <tr>
                 <td>
                     <label for="name"><font size="5">username : </font></label>
                 </td>
                 <td>
-                    <input type="text" name="name" id="name" size="30" autocomplete="on" autofocus placeholder="full name here">
+                    <input type="text" name="name" id="name" size="30" autocomplete="on" autofocus placeholder="full name here" required>
                 </td>
             </tr>
             <tr>
@@ -21,7 +21,7 @@
                     <label for="date"><font size="5">Birth date : </font></label>
                 </td>
                 <td>
-                    <input type="date" name="date" id="date" min="2025-03-10" max="2025-03-12">
+                    <input type="date" name="date" id="date" min="2025-03-10" max="2025-03-12" required>
                 </td>
             </tr>
             <tr>
@@ -61,7 +61,15 @@
                     <label for="phone"><font size="5">phone no : </font></label>
                 </td>
                 <td>
-                    <input type="tel" name="phone" id="phone" size="30">
+                    <input type="tel" name="phone" id="phone" size="30" pattern="[6-9]\d{9}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="adhar"><font size="5">adhar no : </font></label>
+                </td>
+                <td>
+                    <input type="text" name="adhar" id="adhar" size="30" pattern="\d{4}-\d{4}-\d{4}" placeholder="XXXX-XXXX-XXXX">
                 </td>
             </tr>
             <tr>
@@ -85,7 +93,7 @@
                     <label for="photo"><font size="5">enter photo : </font></label>
                 </td>
                 <td>
-                    <input type="file" name="photo" id="photo" >
+                    <input type="file" name="photo" id="photo" multiple accept="application/pdf" >
                 </td>
             </tr>
 
