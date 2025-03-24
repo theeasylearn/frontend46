@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .circle {
+            height: 300px;
+            width: 300px;
+            border-radius: 100%;
+            border: 5px solid green;
+            overflow: hidden;
+        }
+
+        .circle>img {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+            /* Fills the container without stretching */
+        }
+
+        .circle:hover {
+            /* transform: rotate(180deg); */
+            animation: wheels 1s linear 500ms normal forwards;
+        }
+
+        @keyframes wheels {
+            25% {
+                transform: rotate(90deg);
+                filter: grayscale(25%);
+            }
+
+            50% {
+                transform: rotate(180deg);
+                filter: grayscale(50%);
+            }
+
+            75% {
+                transform: rotate(270deg);
+                filter: grayscale(75%);
+            }
+
+            100% {
+                transform: rotate(360deg);
+                filter: grayscale(100%);
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Circle Image</h1>
+    <div class="circle">
+        <img src="images/dev.webp" alt="">
+    </div>
+</body>
+
+</html>

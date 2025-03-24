@@ -45,6 +45,12 @@
             grid-area: news4;
         }
 
+        #menu {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
         /*  ##Device = Most of the Smartphones Mobiles (Portrait) ##Screen = B/w 320px to 479px */
         @media (min-width: 320px) and (max-width: 480px) {
 
@@ -61,11 +67,7 @@
                 grid-template-rows: 70px 200px auto auto auto auto;
             }
 
-            #menu {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            }
+
 
             #menu>img {
                 height: 60px;
@@ -87,7 +89,14 @@
                     "banner banner"
                     "news1 news2"
                     "news3 news4";
-                grid-template-rows: auto 200px auto auto;
+                grid-template-rows: 70px 200px auto auto;
+            }
+            #menu>img {
+                height: 60px;
+            }
+
+            #menu>ul {
+                display: none;
             }
         }
 
@@ -102,7 +111,15 @@
                     "banner banner banner"
                     "news1 news1 news1"
                     "news2 news3 news4";
-                grid-template-rows: auto 200px auto auto;
+                grid-template-rows: 70px 200px auto;
+            }
+
+            #menu>img {
+                height: 60px;
+            }
+
+            #menu>ul {
+                display: none;
             }
         }
 
@@ -116,7 +133,27 @@
                     "menu menu menu menu"
                     "banner banner banner banner"
                     "news1 news2 news3 news4";
-                grid-template-rows: auto 200px auto auto;
+                grid-template-rows: 100px 200px auto;
+            }
+
+            #menubutton {
+                display: none;
+            }
+
+            #menu>img {
+                height: 100px;
+            }
+
+            #links {
+                display: flex;
+                gap: 20px;
+                list-style-type: none;
+                font-size: larger;
+            }
+
+            #menu>h3 {
+                font-size: xx-large;
+                text-transform: uppercase;
             }
         }
 
@@ -130,10 +167,35 @@
                     "menu menu menu menu"
                     "banner banner banner banner"
                     "news1 news2 news3 news4";
-                grid-template-rows: auto 200px auto auto;
+                grid-template-rows: 100px 200px auto;
+            }
+
+            #menubutton {
+                display: none;
+            }
+
+            #menu>img {
+                height: 100px;
+            }
+
+            #menu {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            #links {
+                display: flex;
+                gap: 20px;
+                list-style-type: none;
+                font-size: larger;
+            }
+
+            #menu>h3 {
+                font-size: xx-large;
+                text-transform: uppercase;
             }
         }
-        
     </style>
 </head>
 
@@ -149,7 +211,7 @@
                 <li><a href="#">Services</a></li>
                 <li><a href="#">Contact us</a></li>
             </ul>
-            <img src="images/menu.png" alt="" onclick="toggleMenu();">
+            <img src="images/menu.png" id="menubutton" alt="" onclick="toggleMenu();">
         </div>
         <div id="banner">Banner</div>
         <div id="news1">News 1</div>
@@ -162,12 +224,11 @@
         function toggleMenu() {
             // alert('button clicked..');
             if (isVisible == false) {
-                document.getElementById('links').style="display:block;position:absolute;top:60px;left:0px;background-color:white;width:100%";
+                document.getElementById('links').style = "display:block;position:absolute;top:60px;left:0px;background-color:white;width:95%;margin-left:5px;margin-right:5px";
                 isVisible = true;
             }
-            else 
-            {
-                document.getElementById('links').style="display:none";
+            else {
+                document.getElementById('links').style = "display:none";
                 isVisible = false;
             }
         }
