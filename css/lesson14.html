@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flash
+        {
+            background-color: red;
+            color:yellow;
+            border: 1px solid black;
+            padding:10px;
+            display: inline-block;
+            font-size: x-large;
+            letter-spacing: 1px;
+            animation: blink 1s linear 0s normal infinite;
+        }
+        @keyframes blink {
+            50%
+            {
+                background-color: yellow;
+                color:red;
+                transform: scale(1.25);
+            }
+            100%
+            {
+                background-color: red;
+                color:yellow;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flash">
+        Sale 99% off 
+    </div>
+</body>
+</html>
