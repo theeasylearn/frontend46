@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        article
+        {
+            background-color: antiquewhite;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        article>div 
+        {
+            background-color: brown;
+            width:250px;
+            border: 1px solid yellow;
+            font-size: 48px;
+            text-align: center;
+            color:white;
+        }
+        .center-div 
+        {
+            /* works only if tag has display flex */
+            justify-content: center;
+        }
+        .right-div 
+        {
+            justify-content: right;
+        }
+        .around-div 
+        {
+            justify-content: space-around;
+        }
+        .between-div 
+        {
+            justify-content: space-between;
+        }
+        section
+        {
+            background-color: blueviolet;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: 300px;
+        }
+        section>span 
+        {
+            background-color: yellow;
+            font-size: 48pt;
+            height: 100px;
+            width:100px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </article>
+    <article class="center-div">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </article>
+    <article class="right-div">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </article>
+    <article class="around-div">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </article>
+    <article class="between-div">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </article>
+    <section>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+    </section>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* internal stylesheet */
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: cornsilk;
+        }
+
+        #page {
+            display: grid;
+            grid-template-columns: 20% 60% 20%;
+            grid-template-areas:
+                "header header header"
+                "menu content sidebar"
+                "footer footer footer";
+            grid-template-rows: 10% 80% 10%;
+            height: 100vh;
+        }
+
+        #page>div {
+            border: 1px solid brown;
+        }
+
+        #header {
+            grid-area: header;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #menu {
+            grid-area: menu;
+        }
+
+        #content {
+            grid-area: content;
+        }
+
+        #sidebar {
+            grid-area: sidebar;
+        }
+
+        #footer {
+            grid-area: footer;
+        }
+        #logo
+        {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+        #logo>img 
+        {
+            height: 100%;
+            
+        }
+        #header>ul 
+        {
+            display: flex;
+            gap: 20px;
+        }
+        #header>ul>li 
+        {
+            list-style-type: none;
+        }
+        #header>ul>li>a:link 
+        {
+            text-decoration: none;
+            font-size: large;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background-color: brown;
+            color:cornsilk;
+            padding:10px 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="page">
+        <div id="header">
+            <div id="logo">
+                <img src="images/earth.png" alt="">
+                <h1>THE EASYLEARN ACADEMY</h1>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </div>
+        <div id="menu">Menu</div>
+        <div id="content">Content</div>
+        <div id="sidebar">Sidebar</div>
+        <div id="footer">Footer</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .circle {
+            height: 300px;
+            width: 300px;
+            border-radius: 100%;
+            border: 1px solid black;
+            overflow: hidden;
+        }
+
+        .circle>img {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+            /* Fills the container without stretching */
+            filter: grayscale(100%);
+        }
+
+        .circle>img:hover 
+        {
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            animation: zoom-in 1s linear 0s normal forwards;
+        }
+        
+        @keyframes zoom-in {
+            33%
+            {
+                transform: scale(1.33);
+                filter: grayscale(66%);
+            }
+            66%
+            {
+                transform: scale(1.66);
+                filter: grayscale(33%);
+            }
+            100%
+            {
+                transform: scale(2.0);
+                filter: grayscale(0%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Circle Image</h1>
+    <div class="circle">
+        <img src="images/shirt.jpg" alt="">
+    </div>
+</body>
+
+</html>

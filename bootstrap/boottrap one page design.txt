@@ -1,0 +1,27 @@
+1	header
+		site logo
+		site title 
+2	Menu
+3	Banner Slider
+4	Why The EasyLearn Academy
+5	Advantages 
+		Advantage 1
+		Advantage 2
+		Advantage 3
+		Advantage 4
+6	About us
+		Image 
+		Content
+7	Courses 
+		Course 1
+		Course 2
+		Course 3
+		Course 4
+		Course 5
+		Course 6
+8	Contact us 
+		Contact Detail 
+		Google map 
+9	Footer
+	
+	

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+        {
+            margin: 0px;
+            padding: 0px;
+        }
+        #menu 
+        {
+            background-color: aliceblue;
+            display: flex;
+            list-style-type: none;
+            justify-content: space-around;
+            align-items: center;
+            height: 70px;
+           
+        }
+        /* style will be applied to unvisited link */
+        #menu>li>a:link, #menu>li>a:visited 
+        {
+            font-size: x-large;
+            background-color: blue;
+            color:white;
+            padding:10px;
+            text-decoration: none;
+            text-transform: uppercase;
+           
+        }
+
+        #menu>li>a:hover 
+        {
+            background-color: #B2FFFF;
+            color:black;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            animation: change-color 2s linear forwards;
+        }
+
+        #menu>li>a:active
+        {
+            background-color: red;
+            color:yellow;
+        }
+        /* animation */
+        @keyframes change-color {
+            25%
+            {
+                background-color: #2D40B3;
+                border-radius: 2.5px;
+            }
+
+            50%
+            {
+                background-color: #5980CC;
+                border-radius: 5px;
+            }
+
+            75%
+            {
+                background-color: #86BFE6;
+                border-radius: 7.5px;
+            }
+
+            100%
+            {
+                background-color: #B2FFFF;
+                border-radius: 10px;
+            }
+        }
+        p 
+        {
+            font-size: large;
+            letter-spacing: 1px;
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="menu">
+        <li><a href="https://www.google.com">Google</a></li>
+        <li><a href="https://www.microsoft.com">Microsoft</a></li>
+        <li><a href="https://www.ibm.com">IBM</a></li>
+        <li><a href="https://www.tcs.com">TCS</a></li>
+        <li><a href="https://twitter.com">X</a></li>
+    </ul>
+    <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae iste, non at nostrum nihil sequi! Laudantium harum eveniet perferendis, dolore impedit hic porro delectus. At consequatur, sint veniam fuga voluptatem quos impedit blanditiis dolorum. Aperiam, possimus. Eaque veniam ullam architecto necessitatibus nisi libero nemo expedita quidem, itaque fuga! Quaerat nihil nemo veritatis assumenda nam ad pariatur incidunt exercitationem sequi asperiores dolor repudiandae, dolores quidem dolorum aut rerum rem accusantium obcaecati placeat voluptas aliquid minus molestias. Dignissimos maiores dicta incidunt officia ullam totam dolorum autem sapiente nisi sequi enim blanditiis, odit eos, odio illo unde. Fugit nesciunt ipsam cum, dignissimos quasi exercitationem, harum natus maxime itaque possimus vitae pariatur incidunt doloremque nostrum ullam, ex delectus temporibus quo vel at commodi necessitatibus? Aspernatur id architecto magnam labore obcaecati voluptatum non ea maxime, adipisci minima, numquam qui nulla incidunt sapiente totam dolorum veritatis! Sunt quia, officia in, ipsa magnam fugiat vel iure laborum debitis corporis praesentium iusto aperiam voluptate eum nemo. Rem quod quia veniam numquam aperiam repudiandae ratione est repellendus harum distinctio voluptate eius nobis quae officiis, libero quidem tenetur perspiciatis, ex laboriosam veritatis aut? Veritatis voluptas ab quos temporibus nam, cumque sed adipisci nemo quisquam inventore dolorem. Qui, temporibus? Voluptatibus, possimus?</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae iste, non at nostrum nihil sequi! Laudantium harum eveniet perferendis, dolore impedit hic porro delectus. At consequatur, sint veniam fuga voluptatem quos impedit blanditiis dolorum. Aperiam, possimus. Eaque veniam ullam architecto necessitatibus nisi libero nemo expedita quidem, itaque fuga! Quaerat nihil nemo veritatis assumenda nam ad pariatur incidunt exercitationem sequi asperiores dolor repudiandae, dolores quidem dolorum aut rerum rem accusantium obcaecati placeat voluptas aliquid minus molestias. Dignissimos maiores dicta incidunt officia ullam totam dolorum autem sapiente nisi sequi enim blanditiis, odit eos, odio illo unde. Fugit nesciunt ipsam cum, dignissimos quasi exercitationem, harum natus maxime itaque possimus vitae pariatur incidunt doloremque nostrum ullam, ex delectus temporibus quo vel at commodi necessitatibus? Aspernatur id architecto magnam labore obcaecati voluptatum non ea maxime, adipisci minima, numquam qui nulla incidunt sapiente totam dolorum veritatis! Sunt quia, officia in, ipsa magnam fugiat vel iure laborum debitis corporis praesentium iusto aperiam voluptate eum nemo. Rem quod quia veniam numquam aperiam repudiandae ratione est repellendus harum distinctio voluptate eius nobis quae officiis, libero quidem tenetur perspiciatis, ex laboriosam veritatis aut? Veritatis voluptas ab quos temporibus nam, cumque sed adipisci nemo quisquam inventore dolorem. Qui, temporibus? Voluptatibus, possimus?</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae iste, non at nostrum nihil sequi! Laudantium harum eveniet perferendis, dolore impedit hic porro delectus. At consequatur, sint veniam fuga voluptatem quos impedit blanditiis dolorum. Aperiam, possimus. Eaque veniam ullam architecto necessitatibus nisi libero nemo expedita quidem, itaque fuga! Quaerat nihil nemo veritatis assumenda nam ad pariatur incidunt exercitationem sequi asperiores dolor repudiandae, dolores quidem dolorum aut rerum rem accusantium obcaecati placeat voluptas aliquid minus molestias. Dignissimos maiores dicta incidunt officia ullam totam dolorum autem sapiente nisi sequi enim blanditiis, odit eos, odio illo unde. Fugit nesciunt ipsam cum, dignissimos quasi exercitationem, harum natus maxime itaque possimus vitae pariatur incidunt doloremque nostrum ullam, ex delectus temporibus quo vel at commodi necessitatibus? Aspernatur id architecto magnam labore obcaecati voluptatum non ea maxime, adipisci minima, numquam qui nulla incidunt sapiente totam dolorum veritatis! Sunt quia, officia in, ipsa magnam fugiat vel iure laborum debitis corporis praesentium iusto aperiam voluptate eum nemo. Rem quod quia veniam numquam aperiam repudiandae ratione est repellendus harum distinctio voluptate eius nobis quae officiis, libero quidem tenetur perspiciatis, ex laboriosam veritatis aut? Veritatis voluptas ab quos temporibus nam, cumque sed adipisci nemo quisquam inventore dolorem. Qui, temporibus? Voluptatibus, possimus?</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae iste, non at nostrum nihil sequi! Laudantium harum eveniet perferendis, dolore impedit hic porro delectus. At consequatur, sint veniam fuga voluptatem quos impedit blanditiis dolorum. Aperiam, possimus. Eaque veniam ullam architecto necessitatibus nisi libero nemo expedita quidem, itaque fuga! Quaerat nihil nemo veritatis assumenda nam ad pariatur incidunt exercitationem sequi asperiores dolor repudiandae, dolores quidem dolorum aut rerum rem accusantium obcaecati placeat voluptas aliquid minus molestias. Dignissimos maiores dicta incidunt officia ullam totam dolorum autem sapiente nisi sequi enim blanditiis, odit eos, odio illo unde. Fugit nesciunt ipsam cum, dignissimos quasi exercitationem, harum natus maxime itaque possimus vitae pariatur incidunt doloremque nostrum ullam, ex delectus temporibus quo vel at commodi necessitatibus? Aspernatur id architecto magnam labore obcaecati voluptatum non ea maxime, adipisci minima, numquam qui nulla incidunt sapiente totam dolorum veritatis! Sunt quia, officia in, ipsa magnam fugiat vel iure laborum debitis corporis praesentium iusto aperiam voluptate eum nemo. Rem quod quia veniam numquam aperiam repudiandae ratione est repellendus harum distinctio voluptate eius nobis quae officiis, libero quidem tenetur perspiciatis, ex laboriosam veritatis aut? Veritatis voluptas ab quos temporibus nam, cumque sed adipisci nemo quisquam inventore dolorem. Qui, temporibus? Voluptatibus, possimus?</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae iste, non at nostrum nihil sequi! Laudantium harum eveniet perferendis, dolore impedit hic porro delectus. At consequatur, sint veniam fuga voluptatem quos impedit blanditiis dolorum. Aperiam, possimus. Eaque veniam ullam architecto necessitatibus nisi libero nemo expedita quidem, itaque fuga! Quaerat nihil nemo veritatis assumenda nam ad pariatur incidunt exercitationem sequi asperiores dolor repudiandae, dolores quidem dolorum aut rerum rem accusantium obcaecati placeat voluptas aliquid minus molestias. Dignissimos maiores dicta incidunt officia ullam totam dolorum autem sapiente nisi sequi enim blanditiis, odit eos, odio illo unde. Fugit nesciunt ipsam cum, dignissimos quasi exercitationem, harum natus maxime itaque possimus vitae pariatur incidunt doloremque nostrum ullam, ex delectus temporibus quo vel at commodi necessitatibus? Aspernatur id architecto magnam labore obcaecati voluptatum non ea maxime, adipisci minima, numquam qui nulla incidunt sapiente totam dolorum veritatis! Sunt quia, officia in, ipsa magnam fugiat vel iure laborum debitis corporis praesentium iusto aperiam voluptate eum nemo. Rem quod quia veniam numquam aperiam repudiandae ratione est repellendus harum distinctio voluptate eius nobis quae officiis, libero quidem tenetur perspiciatis, ex laboriosam veritatis aut? Veritatis voluptas ab quos temporibus nam, cumque sed adipisci nemo quisquam inventore dolorem. Qui, temporibus? Voluptatibus, possimus?</p>
+    </div>
+</body>
+
+</html>

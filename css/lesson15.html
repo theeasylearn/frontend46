@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .circle {
+            height: 200px;
+            width: 200px;
+            border-radius: 100%;
+            border: 1px solid black;
+            position: relative;
+            /* Necessary for translateY to work */
+        }
+
+        body {
+            gap: 10px;
+            display: flex;
+            align-items: flex-start;
+            /* Allows elements to move down */
+            height: 100vh; /* Full viewport height */
+        }
+
+        .circle:hover {
+            animation: fall-down 1.5s cubic-bezier(0.4, 0, 1, 1) forwards;
+        }
+
+        @keyframes fall-down {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(calc(100vh - 220px)); /* Stops at bottom */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="circle">
+
+    </div>
+    <div class="circle">
+
+    </div>
+    <div class="circle">
+
+    </div>
+</body>
+
+</html>
