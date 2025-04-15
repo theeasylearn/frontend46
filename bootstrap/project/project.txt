@@ -1,0 +1,15 @@
+pages
+----------------------
+home
+about
+contact
+category
+login
+
+
+home
+------------------------
+nav
+carousel
+
+fotter
