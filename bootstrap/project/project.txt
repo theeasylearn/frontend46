@@ -7,9 +7,4 @@ category
 login
 
 
-home
-------------------------
-nav
-carousel
-
-fotter
+https://tunatheme.com/tf/html/broccoli-preview/broccoli/index-3.html

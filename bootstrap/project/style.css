@@ -1,0 +1,18 @@
+*{
+    font-family: "Oswald", sans-serif;
+}
+.nav-item .nav-link:hover {
+    color: blue !important;
+}
+h1{
+    color: blue;
+}
+
+.card{
+    transition: all ease-in-out 0.5s;
+}
+
+.card:hover{
+    background-color: aqua;
+    transform: scale(1.1);
+}
