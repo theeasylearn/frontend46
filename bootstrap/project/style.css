@@ -8,11 +8,24 @@ h1{
     color: blue;
 }
 
-.card{
+.fetures{
     transition: all ease-in-out 0.5s;
 }
 
-.card:hover{
+.fetures:hover{
     background-color: aqua;
     transform: scale(1.1);
+}
+
+
+.product-link:hover{
+    border-bottom: 2px solid black;
+}
+
+.products{
+    transition: all ease-in-out 0.5s;
+}
+
+.products:hover{
+    transform: translateY(-20px);
 }
