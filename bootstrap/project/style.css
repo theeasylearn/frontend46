@@ -29,3 +29,16 @@ h1{
 .products:hover{
     transform: translateY(-20px);
 }
+.reviews{
+    scroll-behavior: smooth;
+}
+
+.page-link:hover{
+    background-color: blue;
+    color: white;
+}
+
+#page_footer p,#page_footer a{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+
+}
