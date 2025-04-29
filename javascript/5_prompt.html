@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>example of prompt</p>
+    <p align="right">
+        <!-- no need to use return keyword because it is not anchor tag -->
+        <button type="button" onclick="getUserDetail();">click to give your detail</button>
+        <button type="button" onclick="openWebsite();">Open your favorite website</button>
+    </p>
+    <script>
+        //create user defined function 
+        //function function-name
+        function getUserDetail()
+        {
+            let message = "What is your name";
+            let defaultName = "unknown";
+
+            //take input from user 
+            let name = prompt(message,defaultName);
+            alert('Welcome Mr/miss/Mrs ' + name);
+        }
+
+        function openWebsite()
+        {
+            let message = "what is your favorite website name?";
+            let defaultSite = "http://www.google.com";
+            let siteName = prompt(message,defaultSite);
+            window.location = siteName; 
+        }
+    </script>
+</body>
+</html>

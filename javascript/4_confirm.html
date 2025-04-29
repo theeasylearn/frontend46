@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Example of confirm dialog box</h1>
+    <p align="right">
+        <a href="success.html" onclick="return confirmPurchase();">Subscribe to premium plan (5000)</a>
+    </p>
+    <script>
+        //create user defined function 
+        //function function-name()
+        function confirmPurchase() {
+            //create variable 
+            let response = confirm("are you sure you want to do this?");
+            if (response == true) {
+                alert('let go ahead');
+                return true;
+            }
+            else 
+            {
+                alert('never mind, think again to buy our plan');
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
