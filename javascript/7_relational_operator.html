@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>document.write method and relational operators</h1>
+    <hr/>
+
+    <script>
+        //variable declare 
+        var num1,num2,result;
+
+        //accept input 
+        num1 = prompt("Enter number 1",0);
+        num2 = prompt("Enter number 2",0);
+
+        //input is always string so before we do any operation like mathematical operation, it has to be converted into numbers (int/float)
+        num1 = parseInt(num1);
+        num2 = parseInt(num2);
+        document.write(`${num1} < ${num2} `,num1<num2);
+        document.write(`<br/> ${num1} > ${num2} `,num1>num2);
+        document.write(`<br/> ${num1} <= ${num2} `,num1<=num2);
+        document.write(`<br/> ${num1} >= ${num2} `,num1>=num2);
+        document.write(`<br/> ${num1} == ${num2} `,num1==num2);
+        document.write(`<br/> ${num1} != ${num2} `,num1!=num2);
+        document.write(`<br/> ${num1} === ${num2} `,num1===num2);
+        document.write(`<br/> ${num1} !== ${num2} `,num1!==num2);
+    </script>
+</body>
+</html>

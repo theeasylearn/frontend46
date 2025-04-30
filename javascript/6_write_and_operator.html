@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>document.write method and athematic operators</h1>
+    <hr/>
+
+    <script>
+        //variable declare 
+        var num1,num2,addition,subtraction,multiplication,division;
+
+        //accept input 
+        num1 = prompt("Enter number 1",0);
+        num2 = prompt("Enter number 2",0);
+
+        //input is always string so before we do any operation like mathematical operation, it has to be converted into numbers (int/float)
+        num1 = parseInt(num1);
+        num2 = parseInt(num2);
+
+        //binary operators
+        addition = num1 + num2;
+        subtraction = num1 - num2;
+        multiplication = num1 * num2;
+        division = num1 / num2;
+        document.write("<font color='blue' size='+4'>addition = ",addition);
+        document.write("<br/> subtraction = ",subtraction);
+        document.write("<br/> multiplication = ",multiplication);
+        document.write("<br/> division = ",division.toFixed(2),"</font>");
+    </script>
+</body>
+</html>
