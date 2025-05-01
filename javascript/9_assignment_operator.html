@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>assignment operator</h1>
+    <b>use console </b>
+    <script>
+        var a = 10;
+        
+        //increment a by 1 
+        // a = a + 2; or 
+        a+=2; 
+        console.log('after increment',a);
+        //decrement a by 1 
+        // a = a - 2; or 
+        a-=2;
+        console.log('after decrement',a);
+        // multiply a by 10 
+        // a = a * 10
+        a*=10;
+        console.log('after multiply',a);
+         // divide a by 10 
+        // a = a / 10
+        a/=10;
+        console.log('after divide',a);
+
+        //unary operator
+        // a=a+1; or 
+        let b = a++; //post fix  b = 10, a = 11
+        console.log('postfix increment',b,a); 
+
+        //unary operator
+        // a=a-1; or 
+        let c = a--; //post fix c = 11, a = 10 
+        console.log('postfix decrement',c,a); 
+
+
+        let d= ++a; //prefix  d = 11, a = 11
+        console.log('prefix increment',d,a); 
+
+        //unary operator
+        // a=a-1; or 
+        let e = --a; //prefix e = 10, a = 10 
+        console.log('prefix decrement',e,a); 
+    </script>
+</body>
+</html>

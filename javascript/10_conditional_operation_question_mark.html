@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 5 IMDb Movies</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-family: Arial, sans-serif;
+        }
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        img {
+            width: 150px;
+            height: 225px;
+            object-fit: cover;
+        }
+        .movie-title {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <p align="right">
+        <button type="button">Only Movies</button>
+        <button type="button">Only TV shows</button>
+    </p>
+   
+
+    
+    <script>
+        let movie = ` <table>
+        <tr>
+            <td colspan="5"><h1 align="center">Movies</h1></td>
+        </tr>
+        <tr>
+            
+            <td>
+                <img src="https://placehold.co/150x225?text=The+Shawshank+Redemption" alt="The Shawshank Redemption Poster">
+                <span class="movie-title">The Shawshank Redemption</span>
+            </td>
+            <td>
+                <img src="https://placehold.co/150x225?text=The+Godfather" alt="The Godfather Poster">
+                <span class="movie-title">The Godfather</span>
+            </td>
+            <td>
+                <img src="https://placehold.co/150x225?text=The+Dark+Knight" alt="The Dark Knight Poster">
+                <span class="movie-title">The Dark Knight</span>
+            </td>
+            <td>
+                <img src="https://placehold.co/150x225?text=The+Godfather+Part+II" alt="The Godfather Part II Poster">
+                <span class="movie-title">The Godfather Part II</span>
+            </td>
+            <td>
+                <img src="https://placehold.co/150x225?text=The+Lord+of+the+Rings" alt="The Lord of the Rings: The Return of the King Poster">
+                <span class="movie-title">The Lord of the Rings: The Return of the King</span>
+            </td>
+        </tr>
+    </table>`;
+
+    let tvshows = `<table>
+        <tr>
+            <td colspan="5"><h1 align="center">TV SHOWS</h1></td>
+        </tr>
+        <tr>
+            <td>
+                <img src="https://placehold.co/150x225?text=Breaking+Bad" alt="Breaking Bad Poster">
+                <span class="show-title">Breaking Bad</span>
+            </td>
+            <td>
+                <img src="https://placehold.co/150x225?text=Chernobyl" alt="Chernobyl Poster">
+                <span class="show-title">Chernobyl</span>
+            </td>
+            <td>
+                <img src="https://placehold.co/150x225?text=Game+of+Thrones" alt="Game of Thrones Poster">
+                <span class="show-title">Game of Thrones</span>
+            </td>
+            <td>
+                <img src="https://placehold.co/150x225?text=Band+of+Brothers" alt="Band of Brothers Poster">
+                <span class="show-title"> 'Band of Brothers</span>
+            </td>
+            <td>
+                <img src="https://placehold.co/150x225?text=The+Wire" alt="The Wire Poster">
+                <span class="show-title">The Wire</span>
+            </td>
+        </tr>
+    </table>`
+    </script>
+</body>
+</html>
