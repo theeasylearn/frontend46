@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,17 +12,20 @@
             margin: 20px 0;
             font-family: Arial, sans-serif;
         }
+
         td {
             border: 1px solid #ddd;
             padding: 10px;
             text-align: center;
             vertical-align: middle;
         }
+
         img {
             width: 150px;
             height: 225px;
             object-fit: cover;
         }
+
         .movie-title {
             font-weight: bold;
             margin-top: 10px;
@@ -29,71 +33,87 @@
         }
     </style>
 </head>
+
 <body>
     <p align="right">
-        <button type="button">Only Movies</button>
-        <button type="button">Only TV shows</button>
+        <button type="button" onclick="displayContent('1');">Only Movies</button>
+        <button type="button" onclick="displayContent('2');">Only TV shows</button>
     </p>
-   
-
-    
+    <hr />
     <script>
-        let movie = ` <table>
+        var buttons = ` <p align="right">
+        <button type="button" onclick="displayContent('1');">Only Movies</button>
+        <button type="button" onclick="displayContent('2');">Only TV shows</button>
+    </p>`;
+
+        var movie = `<table>
         <tr>
-            <td colspan="5"><h1 align="center">Movies</h1></td>
+            <td colp="5"><h1 align="center">Movies</h1></td>
         </tr>
         <tr>
             
             <td>
                 <img src="https://placehold.co/150x225?text=The+Shawshank+Redemption" alt="The Shawshank Redemption Poster">
-                <span class="movie-title">The Shawshank Redemption</span>
+                <p class="movie-title">The Shawshank Redemption</p>
             </td>
             <td>
                 <img src="https://placehold.co/150x225?text=The+Godfather" alt="The Godfather Poster">
-                <span class="movie-title">The Godfather</span>
+                <p class="movie-title">The Godfather</p>
             </td>
             <td>
                 <img src="https://placehold.co/150x225?text=The+Dark+Knight" alt="The Dark Knight Poster">
-                <span class="movie-title">The Dark Knight</span>
+                <p class="movie-title">The Dark Knight</p>
             </td>
             <td>
                 <img src="https://placehold.co/150x225?text=The+Godfather+Part+II" alt="The Godfather Part II Poster">
-                <span class="movie-title">The Godfather Part II</span>
+                <p class="movie-title">The Godfather Part II</p>
             </td>
             <td>
                 <img src="https://placehold.co/150x225?text=The+Lord+of+the+Rings" alt="The Lord of the Rings: The Return of the King Poster">
-                <span class="movie-title">The Lord of the Rings: The Return of the King</span>
+                <p class="movie-title">The Lord of the Rings: The Return of the King</p>
             </td>
         </tr>
     </table>`;
-
-    let tvshows = `<table>
+        var tvshows = `<table>
         <tr>
-            <td colspan="5"><h1 align="center">TV SHOWS</h1></td>
+            <td colp="5"><h1 align="center">TV SHOWS</h1></td>
         </tr>
         <tr>
             <td>
                 <img src="https://placehold.co/150x225?text=Breaking+Bad" alt="Breaking Bad Poster">
-                <span class="show-title">Breaking Bad</span>
+                <p class="show-title">Breaking Bad</p>
             </td>
             <td>
                 <img src="https://placehold.co/150x225?text=Chernobyl" alt="Chernobyl Poster">
-                <span class="show-title">Chernobyl</span>
+                <p class="show-title">Chernobyl</p>
             </td>
             <td>
                 <img src="https://placehold.co/150x225?text=Game+of+Thrones" alt="Game of Thrones Poster">
-                <span class="show-title">Game of Thrones</span>
+                <p class="show-title">Game of Thrones</p>
             </td>
             <td>
                 <img src="https://placehold.co/150x225?text=Band+of+Brothers" alt="Band of Brothers Poster">
-                <span class="show-title"> 'Band of Brothers</span>
+                <p class="show-title"> 'Band of Brothers</p>
             </td>
             <td>
                 <img src="https://placehold.co/150x225?text=The+Wire" alt="The Wire Poster">
-                <span class="show-title">The Wire</span>
+                <p class="show-title">The Wire</p>
             </td>
         </tr>
-    </table>`
+    </table>`;
+        //user defined function
+        //document.write(tvshows);
+        function displayContent(mode) {
+            //alert('Button clicked');
+            // if (mode === '1')
+            //     document.write(buttons + movie);
+            // else
+            //     document.write(buttons + tvshows);
+            // or
+            document.write((mode === '1') ? (buttons + movie) : (buttons + tvshows));
+        }
+
     </script>
 </body>
+
 </html>
