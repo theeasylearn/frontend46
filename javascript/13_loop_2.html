@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        h1 {
+            height: calc(100vh/10);
+        }
+
+        table {
+            height: calc(100vh - (100vh/10));
+        }
+
+        td {
+            font-size: 100px;
+            text-align: center;
+        }
+
+        /* select 1st td tag of each tr tag */
+        tbody>tr>td:first-child {
+            color: red;
+        }
+
+        /* select 1st td tag of each tr tag */
+        tbody>tr>td:last-child {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center">May 2025</h1>
+    <table width="100%" border="1">
+        <thead>
+            <tr>
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+            </tr>
+        </thead>
+        <tbody id="tbody1">
+
+
+        </tbody>
+    </table>
+    <script>
+        // 1st delete code which is reparative but keep it once 
+        // 2nd step code which is reparative, store it into variable 
+        // var row = `<tr>
+        //         <td></td>
+        //         <td></td>
+        //         <td></td>
+        //         <td></td>
+        //         <td>1</td>
+        //         <td>2</td>
+        //         <td>3</td>
+        //     </tr>`;
+        //3rd put this variable inside parent of html code which was cut     
+        // document.getElementById('tbody1').innerHTML = row;
+
+        //we need 5 such rows 
+        // document.getElementById('tbody1').innerHTML += row;
+        // document.getElementById('tbody1').innerHTML += row;
+        // document.getElementById('tbody1').innerHTML += row;
+        // document.getElementById('tbody1').innerHTML += row;
+
+        //here we observe that line no 73 to 76 is repetitive hence we put it in loop 
+        var day = 1;
+        for (let i = 1; i <= 5; i++) { //outer loop
+            //here we again observe that td tag is also repetitive 
+            let td = '';
+
+            for (let j = 1; j <= 7 && day<=31; j++,day++) { //inner loop 
+                td = td + `<td>${day}</td>`;
+            }
+            let row = `<tr>${td}</tr>`;
+            document.getElementById('tbody1').innerHTML += row;
+        }
+    </script>
+</body>
+
+</html>
