@@ -55,40 +55,8 @@
 
         </tbody>
     </table>
-    <script>
-        // 1st delete code which is reparative but keep it once 
-        // 2nd step code which is reparative, store it into variable 
-        // var row = `<tr>
-        //         <td></td>
-        //         <td></td>
-        //         <td></td>
-        //         <td></td>
-        //         <td>1</td>
-        //         <td>2</td>
-        //         <td>3</td>
-        //     </tr>`;
-        //3rd put this variable inside parent of html code which was cut     
-        // document.getElementById('tbody1').innerHTML = row;
-
-        //we need 5 such rows 
-        // document.getElementById('tbody1').innerHTML += row;
-        // document.getElementById('tbody1').innerHTML += row;
-        // document.getElementById('tbody1').innerHTML += row;
-        // document.getElementById('tbody1').innerHTML += row;
-
-        //here we observe that line no 73 to 76 is repetitive hence we put it in loop 
-        var day = 1;
-        for (let i = 1; i <= 5; i++) { //outer loop
-            //here we again observe that td tag is also repetitive 
-            let td = '';
-
-            for (let j = 1; j <= 7 && day<=31; j++,day++) { //inner loop 
-                td = td + `<td>${day}</td>`;
-            }
-            let row = `<tr>${td}</tr>`;
-            document.getElementById('tbody1').innerHTML += row;
-        }
-    </script>
+    <!-- Linking of external javascript file -->
+    <script src="js/calendar.js" type="text/javascript"></script>
 </body>
 
 </html>
