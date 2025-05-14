@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        article {
+            display: flex;
+        }
+
+        div {
+            height: 200px;
+            background-color: aliceblue;
+            border: 1px solid black;
+            box-sizing: border-box;
+            width: calc(100vw/6);
+            font-size: 48px;
+            display: flex;
+            justify-content: center;
+            /* horizontal alignment */
+            align-items: center;
+        }
+
+        .highlight {
+            background-color: yellow;
+            color: red;
+        }
+
+        .gradient {
+            background: #2A7B9B;
+            background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <div onclick="handle_click();">Click</div>
+        <div onmouseover="handle_onmousever(this);" onmouseout="handle_onmouseout(this);">mouseover</div>
+        <div onmouseover="handle_onmousever(this);" onmouseout="handle_onmouseout(this);">mouseout</div>
+        <div onmousedown="handle_onmousedown(this);">mousedown</div>
+        <div onmouseup="handel_onmouseup(this)">mouseup</div>
+        <div>mousemove</div>
+        <!-- handle mouse move event on above div tag -->
+    </article>
+
+    <script>
+        //1st method
+        function handle_click() {
+            alert('click event occured.');
+        }
+
+        //2nd method 
+        handle_onmousever = (tag) => {
+            //alert('handle on mouse over event');
+            tag.innerHTML = "I Have focus";
+            tag.className = "highlight";
+        }
+
+        //3rd method 
+        let handle_onmouseout = function (tag) {
+            tag.innerHTML = 'I have lost focus'
+            tag.className = "";
+
+        }
+
+        function handle_onmousedown(tag) {
+            tag.classList.toggle('highlight');
+        }
+        function handel_onmouseup(tag) {
+            tag.classList.toggle('gradient');
+        }
+    </script>
+</body>
+
+</html>
