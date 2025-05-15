@@ -32,6 +32,13 @@
             background: #2A7B9B;
             background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
         }
+
+        textarea {
+            border: 1px solid black;
+            height: 300px;
+            width: 100%;
+            font-size: 60px;
+        }
     </style>
 </head>
 
@@ -45,7 +52,10 @@
         <div>mousemove</div>
         <!-- handle mouse move event on above div tag -->
     </article>
-
+    <!-- keyboard related work only in input related tags  -->
+    <textarea onkeydown="handle_onkeydown(this);" onkeyup="handle_onkeyup(this);" onkeypress="handle_onkeypress(this);">
+        let us handle keyboard related event
+    </textarea>
     <script>
         //1st method
         function handle_click() {
@@ -72,6 +82,22 @@
         function handel_onmouseup(tag) {
             tag.classList.toggle('gradient');
         }
+
+
+        let handle_onkeydown = function (tag) {
+            console.log('key down');
+            tag.value = "key down event generated...";
+        }
+        handle_onkeypress = (tag) => {
+            console.log('key press');
+            tag.innerHTML = 'key press event generated'
+        }
+        function handle_onkeyup(tag) {
+            console.log('key up');
+            tag.value = "key up event generated...";
+        }
+
+
     </script>
 </body>
 

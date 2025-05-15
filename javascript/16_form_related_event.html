@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gain-focus {
+            background-color: aliceblue;
+            color: blue;
+            box-shadow: 3px 3px 3px gray;
+        }
+
+        .lost-focus {
+            background-color: white;
+            color: black;
+            box-shadow: none;
+        }
+
+        input {
+            padding: 5px;
+            border: 1px solid black;
+            font-size: larger;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>form related event</h1>
+    <form action="">
+        <table width="100%" border="1" cellpadding="10">
+            <tr>
+                <td width="20%">Enter Amount</td>
+                <td width="30%">
+                    <input type="number" name="amount" id="amount" class="active" onfocus="handle_onfocus(this)"
+                        onblur="handle_onblur(this);" oninput="handle_onchange(this);" />
+                </td>
+                <td id="words"></td>
+            </tr>
+            <tr>
+                <td>Enter Account No</td>
+                <td>
+                    <input type="number" name="accno" id="accno" onfocus="handle_onfocus(this)"
+                        onblur="handle_onblur(this);" />
+                </td>
+                </td>
+                <td ></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function handle_onfocus(tag) {
+            tag.className = "gain-focus";
+        }
+
+        //
+        handle_onblur = (tag) => {
+            tag.className = "lost-focus";
+        }
+
+        let handle_onchange = function(tag) {
+
+            let result = numberToWordsString(tag.value);
+            document.getElementById('words').innerHTML = result;
+        }
+        function numberToWordsString(amount) {
+            const digitWords = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+
+            // Convert the number to a string and map each digit to its word
+            return amount
+                .toString()
+                .split('')
+                .map(digit => digitWords[parseInt(digit)])
+                .join(' ');
+        }
+
+        // Example usage:
+       
+    </script>
+</body>
+
+</html>
