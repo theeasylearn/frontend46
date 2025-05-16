@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            margin: auto;
+            margin-top: 5%;
+            height: 80vh;
+            width: 80vw;
+        }
+
+        tr {
+            height: 33.33%;
+        }
+
+        td {
+            width: 33.33%;
+        }
+
+        input {
+            height: 100%;
+            width: 100%;
+            font-size: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <input type="button" id="one" value="-" />
+            </td>
+            <td>
+                <input type="button" id="two" value="-" />
+            </td>
+            <td>
+                <input type="button" id="three" value="-" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" id="four" value="-" />
+            </td>
+            <td>
+                <input type="button" id="five" value="-" />
+            </td>
+            <td>
+                <input type="button" id="six" value="-" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" id="seven" value="-" />
+            </td>
+            <td>
+                <input type="button" id="eight" value="-" />
+            </td>
+            <td>
+                <input type="button" id="nine" value="-" />
+            </td>
+        </tr>
+    </table>
+    <script>
+        //get refernce of html collection of button
+        var buttons = document.getElementsByTagName("input");
+        console.log(buttons);
+        var letter = 'X';
+        for (let position = 0; position < buttons.length; position++) {
+            console.log(position);
+            buttons[position].onclick = function()
+            {
+                this.value = letter;
+                if (letter === 'X')
+                    letter = '0';
+                else
+                    letter = 'X';
+
+            }
+        }
+    </script>
+</body>
+
+</html>
