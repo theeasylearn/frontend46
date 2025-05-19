@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Create object using 1st method</h1>
+    <script>
+        //create object using 1st method 
+        var MyMath = {
+            //property variable
+            number1: 10,
+            number2: 3,
+            //behavior 
+            display: function () {
+                console.log('display function called...');
+                //access property variable
+                console.log(this.number1, this.number2);
+            },
+            getAddition : function()
+            {
+                //it should result of addition
+                //create local variable result
+                let result = this.number1 + this.number2;
+                return result;
+            }
+            //exercise create getSubtraction, getMultiplication, getDivision function
+
+        }
+        //call MyMath object's function display
+        //objectname.functionname()
+        MyMath.display();
+
+        var result = MyMath.getAddition();
+        console.log("addition ",result);
+        console.log("number 1 " + MyMath.number1 + " number 2 " + MyMath.number2);
+    </script>
+</body>
+
+</html>

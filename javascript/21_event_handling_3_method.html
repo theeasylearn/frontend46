@@ -33,57 +33,54 @@
     <table>
         <tr>
             <td>
-                <input type="button" id="one" value="-" />
+                <input class="mybutton" type="button" id="one" value="-" />
             </td>
             <td>
-                <input type="button" id="two" value="-" />
+                <input class="mybutton" type="button" id="two" value="-" />
             </td>
             <td>
-                <input type="button" id="three" value="-" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="button" id="four" value="-" />
-            </td>
-            <td>
-                <input type="button" id="five" value="-" />
-            </td>
-            <td>
-                <input type="button" id="six" value="-" />
+                <input class="mybutton" type="button" id="three" value="-" />
             </td>
         </tr>
         <tr>
             <td>
-                <input type="button" id="seven" value="-" />
+                <input class="mybutton" type="button" id="four" value="-" />
             </td>
             <td>
-                <input type="button" id="eight" value="-" />
+                <input class="mybutton" type="button" id="five" value="-" />
             </td>
             <td>
-                <input type="button" id="nine" value="-" />
+                <input class="mybutton" type="button" id="six" value="-" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="mybutton" type="button" id="seven" value="-" />
+            </td>
+            <td>
+                <input class="mybutton" type="button" id="eight" value="-" />
+            </td>
+            <td>
+                <input class="mybutton" type="button" id="nine" value="-" />
             </td>
         </tr>
     </table>
     <script>
-        //get refernce of html collection of button
-        var buttons = document.getElementsByTagName("input");
+        //get reference of html collection which has class name  mybutton(array)
+        var buttons = document.getElementsByClassName("mybutton");
         console.log(buttons);
         var letter = 'X';
-        for (let position = 0; position < buttons.length; position++) {
+        var position = 0;
+        while (position < buttons.length) {
             console.log(position);
-            buttons[position].onclick = function()
-            {
+            //event handling 
+            buttons[position].addEventListener("click",function(){
+                // console.log(this.id);
                 this.value = letter;
-                if (letter === 'X')
-                    letter = '0';
-                else
-                    letter = 'X';
+                letter = (letter == 'X') ? "0" : "X";
+            },true);
 
-                //event disable
-                this.onclick = null;
-
-            }
+            position++;
         }
     </script>
 </body>
