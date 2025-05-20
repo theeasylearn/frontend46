@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>3rd way to create object</h1>
+    <table border="1" align="center" cellpadding="10" width="50%" id="mytable">
+        <tr>
+            <td>Number 1</td>
+            <td id="num1"></td>
+        </tr>
+        <tr>
+            <td>Number 2</td>
+            <td id="num2"></td>
+        </tr>
+    </table>
+    <script>
+        //create template
+        function MyMath(number1, number2) {
+            //create property variable
+            this.number1 = number1;
+            this.number2 = number2;
+
+            //create function 
+            this.display = function () {
+                document.getElementById('num1').innerHTML = this.number1;
+                document.getElementById('num2').innerHTML = this.number2;
+            }
+            this.addition = function () {
+                let add = this.number1 + this.number2;
+                console.log(add);
+                let td1 = document.createElement('td');
+                let td2 = document.createElement('td');
+
+                td1.innerHTML = "addition";
+                td2.innerHTML = add;
+
+                let tr = document.createElement('tr');
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+
+                document.getElementById('mytable').appendChild(tr);
+            }
+            //exercise subtraction, multiplication, division
+        }
+        var num1 = parseInt(prompt("Enter number1", 1));
+        var num2 = parseInt(prompt("Enter number2", 1));
+        //var object-variable-name = new function()
+        var m1 = new MyMath(num1,num2); 
+        m1.display();
+        m1.addition();
+    </script>
+</body>
+
+</html>
