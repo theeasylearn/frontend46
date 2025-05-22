@@ -13,7 +13,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <form action="">
+                <form action="" onsubmit="return addProduct();">
                     <div class="row text-bg-light p-3 shadow">
                         <div class="col-3">
                             <h2 class=" text-danger fw-bold mt-4">
@@ -62,18 +62,8 @@
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>IPhone</td>
-                                    <td>125000</td>
-                                    <td>1</td>
-                                    <td>12500</td>
-                                    <td>137500</td>
-                                    <td>
-                                        <button type="button" class="btn btn-secondary">Delete</button>
-                                    </td>
-                                </tr>
+                            <tbody id="output">
+
                             </tbody>
                         </table>
                     </div>
@@ -82,23 +72,55 @@
         </div>
     </div>
     <script>
+        //create global variable 
+        var srno = 1;
         //create template using es6 way
-        class Product
-        {
-            constructor(name,quantity,price)
-            {
-                //create property variable
+        class Product {
+            constructor(name, quantity, price) {
+                //used to create property variable
                 this.name = name;
                 this.price = price;
                 this.quantity = quantity;
-                let total = this.price * this.quantity;
-                this.tax = ( total * 10) / 100;
+                let total = this.price * this.quantity; //local variable
+                this.tax = (total * 10) / 100;
                 this.total = total + this.tax;
             }
-            add()
-            {
-
+            add() {
+                let row = ` <tr>
+                                    <td>${srno}</td>
+                                    <td>${this.name}</td>
+                                    <td>${this.price}</td>
+                                    <td>${this.quantity}</td>
+                                    <td>${this.tax}</td>
+                                    <td>${this.total}</td>
+                                    <td>
+                                        <button type="button" onclick="deleteProduct(this);" class="btn btn-secondary">Delete</button>
+                                    </td>
+                                </tr>`;
+                document.getElementById('output').innerHTML += row;
+                srno +=1;
             }
+        }
+        //
+        function addProduct()
+        {
+            // alert('hi');
+            let name,quantity,price; //local variable
+            name = document.getElementById('name').value; 
+            quantity = document.getElementById('quantity').value;
+            price = document.getElementById('price').value;
+            console.log(name,quantity,price);
+
+            let p1 = new Product(name,quantity,price); //constructor is called automatically
+            p1.add();
+            return false; //required to prevent refreshing webpage;
+        }
+        function deleteProduct(deleteButton)
+        {
+            // alert('hi');//
+            // console.log(deleteButton.parentNode.parentNode);
+            deleteButton.parentNode.parentNode.remove();
+            
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
