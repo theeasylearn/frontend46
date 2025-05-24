@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>single level inheritance</h1>
+    <div id="actions"></div>
+    <script>
+        //create class ES6 way 
+
+        class Person 
+        {
+            //constructor
+            constructor(name)
+            {
+                //property variable
+                this.name = name;
+                document.getElementById('actions').innerHTML+= "Person class constructor called <br/>";
+            }
+            // walk
+            walk()
+            {
+                document.getElementById('actions').innerHTML+= `${this.name} can <b>walk</b><br/>`;
+            }
+            // talk
+            talk()
+            {
+                document.getElementById('actions').innerHTML+= `${this.name} can <b>talk</b><br/>`;
+            }
+        }
+
+        class Student extends Person
+        {
+            constructor(name,language)
+            {   
+                super(name); //calling parent class constructor
+                this.language = language; //property variable 
+                document.getElementById('actions').innerHTML+= "Student class constructor called <br/>";
+            }
+            read()
+            {
+                 document.getElementById('actions').innerHTML+= `${this.name} can <b>read ${this.language}</b><br/>`;
+            }
+            write()
+            {
+                 document.getElementById('actions').innerHTML+= `${this.name} can <b>write ${this.language}</b><br/>`;
+            }
+            whatICanDo()
+            {
+                //calling parent functions
+                super.walk();
+                super.talk();
+                //calling own (same class) methods
+                this.read();
+                this.write();
+            }
+        }
+
+        //create object
+        var s1 = new Student('Divya','Gujarati');
+        s1.whatICanDo();
+    </script>
+</body>
+</html>
