@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>array/List</h1>
+    <script>
+        //create an array/List
+        //var List-name = [values]
+        var students = ['ashish', 'rudra', 'lakshya', 'keval', 'bhumi'];
+        //  position        0       1       2         3     4  (size = 5)
+
+        //display whole array
+        console.log(students);
+
+        //access specific value(element/item)
+        //display 1st student
+        console.log(students[0]); //ashish
+        //display 2nd student
+        console.log(students[1]); //rudra
+        //display last student
+        console.log(students[4]); //bhumi
+
+        //add new student (end of list)
+        students.push('Divya');
+        console.log("after adding new value ", students);
+
+        students.push(100);
+        students.push(3.14);
+        students.push(true);
+
+        console.log("after adding new value ", students);
+
+        //add new student (at beginning)
+        students.unshift('Pallavi');
+        console.log("after adding new value at beginning", students);
+
+        //change value 
+        students[1] = "Ashish Chudasama";
+        console.log("after updating existing value", students);
+
+        //remove last value
+        students.pop()
+
+        //remove 1st value
+        students.shift();
+         console.log("after deleted 2 existing value", students);
+
+        //multiple value remove 
+        students.splice(0,3); //it will delete 3 value from oth position onwards
+        console.log("after deleted 3 existing value", students);
+    </script>
+</body>
+
+</html>
