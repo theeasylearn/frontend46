@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>List related methods</h1>
+    <hr>
+    <script>
+        var runs = [23, 87, 5, 56, 59, 39, 74, 91, 48, 30];
+        var fifty = runs.find((score) => score>50);
+        console.log(fifty); // return 87 (1st score above 87)
+
+        var innings = runs.findIndex((score) => score>50);
+        console.log(innings);
+
+        //get all score >= 50 
+        var fifties = runs.filter((score) => score>=50); //return list as per condition
+        console.log(fifties);
+
+        var not_fifties = runs.filter((score) => score<50);
+        console.log(not_fifties);
+
+        //get score between 50 and 60
+        var list2 = runs.filter((score) => {
+            //this code will runs no of times equal to no of values in fruits 
+            //console.log(score);
+            if(score>=50 && score<=60)
+                return score;
+        });
+        console.log(list2);
+    </script>
+</body>
+</html>

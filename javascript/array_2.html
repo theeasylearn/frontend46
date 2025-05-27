@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>List related methods</h1>
+    <hr>
+    <script>
+        var fruits = ['apple','banana','kiwi'];
+        var vegetables =  ['tomato','potato','lady finger'];
+
+        console.log(fruits);
+        console.log(vegetables);
+
+        //merge list 
+        var fridge = fruits.concat(vegetables);
+        console.log(fridge);
+
+        var fridge2 = fridge.slice();
+        console.log(fridge);
+        console.log(fridge2);
+
+        //clear all items in fridge2 
+        fridge2.length = 0;
+        console.log('after removing all items from fridge2');
+        console.log(fridge)
+        console.log(fridge2)
+
+        var fav_fruit = prompt("what is your favorite fruit"); //banana
+        //search whether favorite fruit is in list or not 
+        var position = fruits.indexOf(fav_fruit);
+        console.log(position);
+        if(position>=0)
+            alert("Fruit found at " + (position+1));
+        else 
+            alert('Fruit not found ');
+
+        var isFound = fruits.includes(fav_fruit); 
+        console.log(isFound);
+    </script>
+</body>
+</html>
