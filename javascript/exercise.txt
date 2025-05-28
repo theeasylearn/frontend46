@@ -1,0 +1,7 @@
+1) create web page that display IPL TEAM Name, Captain, Home Ground, Trophy, State using array of object and map function.  display data using card format using bootstrap 
+
+2) create web page that display Bus Routes. 
+    display source, destination, Bus Type, Price, Departure time, no of seats 
+    display data in bootstrap table format 
+    use array of object 
+

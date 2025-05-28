@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Object Destructing</h1>
+    <p>use console</p>
+    <script>
+        //create object
+        const country = {
+            name: "India",
+            capital: "New Delhi",
+            area: "3,287,263 sq km",
+            currency: "Indian Rupee (INR)",
+            timezone: "IST (UTC+5:30)",
+            continent: "Asia",
+            // Additional 10 properties
+            population: "1.4 billion",
+            officialLanguage: "Hindi",
+            callingCode: "+91",
+            independenceYear: 1947,
+            majorReligion: "Hinduism",
+            gdp: "3.73 trillion USD",
+            literacyRate: "77.7%",
+            internetTLD: ".in",
+            drivingSide: "Left",
+            nationalAnimal: "Bengal Tiger"
+        };
+        // var name = country.name;
+        // var capital = country.capital;
+        // console.log(name,capital);
+        //object destructing 
+        const {
+            name,capital,area,currency,timezone,continent,population,officialLanguage,callingCode,independenceYear,majorReligion,gdp,literacyRate,internetTLD,drivingSide,nationalAnimal
+        } = country;
+        console.log(name,capital,area,currency,timezone,continent,population,officialLanguage,callingCode,independenceYear,majorReligion,gdp,literacyRate,internetTLD,drivingSide,nationalAnimal);
+
+    </script>
+</body>
+
+</html>
