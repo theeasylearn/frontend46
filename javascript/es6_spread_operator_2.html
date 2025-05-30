@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>es6 spread operator on 2nd object</h1>
+    <hr />
+    <b>use console for output</b>
+    <script>
+        const oldCar = {
+            brand: "Toyota",
+            model: "Camry",
+            year: 2022,
+            color: "White",
+            isElectric: false
+        };
+
+        const newCar = {
+            brand: "Honda",
+            model: "Civic",
+            year: 2021,
+            color: "Black",
+            mileage: 18000 // in kilometers
+        };
+
+        console.log('old car',oldCar);
+        console.log('new car',newCar);
+
+        //es6 spread operator
+        var updatedCar = {...oldCar,...newCar};
+         console.log('update car',updatedCar);
+    </script>
+</body>
+
+</html>

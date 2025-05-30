@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>es6 spread operator</h1>
+    <h2>push object into array</h2>
+    <hr />
+    <b>use console for output</b>
+    <script>
+        //create empty array/list
+        var data = [];
+        console.log(data);
+
+        //create object
+        let student1 = { name: 'ashish', html: 50, css: 60, javascript: 70 };
+        let student2 = { name: 'rudra', html: 55, css: 65, javascript: 75 };
+        let student3 = { name: 'lakshya', html: 59, css: 69, javascript: 79 };
+
+        data.push(student1);
+        // OR
+        //push object into lis using ES6 spread operator
+        data = [...data, student2];
+        data = [...data, student3];
+        console.log(data);
+    </script>
+</body>
+
+</html>
