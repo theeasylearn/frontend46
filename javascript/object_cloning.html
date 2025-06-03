@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Object Cloning</h1>
+    <script>
+        //create object 
+        let user1 = {
+            name:'Ram',
+            surname:'Patel',
+            age: 30
+        }
+
+        //wrong way of copy 
+        // let user2 = user1;
+        //correct way to copy (object clone)
+        //1st step create empty object
+
+        let user2 = {};
+        //2nd step use for each loop to copy each and every property of object2 into object1
+        for(let key in user1)
+        {
+            // console.log(key);
+            user2[key] = user1[key];
+        }
+        console.log('before change ')
+        console.log('user 1',user1);
+        console.log('user 2',user2);
+        user1.age = 41;
+        user2.name = "Hari";
+        console.log('after change ')
+        console.log('user 1',user1);
+        console.log('user 2',user2);
+    </script>
+</body>
+</html>
