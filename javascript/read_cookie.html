@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="success.html" method="post" onsubmit="return readCookie();">
+        <table border="1" align="center" width="50%" cellpadding="10">
+            <tr>
+                <td align="center">
+                    working with cookies (read cookies)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="cookieName" id="cookieName" required placeholder="cookie name" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                     <input type="text" name="cookieValue" id="cookieValue"  placeholder="cookie value" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                     <button type="submit" >Read Cookie</button>
+                     <button type="reset">Clear all</button>
+                </td>
+            </tr>
+            
+        </table>
+    </form>
+    <!-- import cookies file -->
+     <script src="js/cookies.js"></script>
+    <script>
+
+        function readCookie()
+        {
+            //create variable name and value 
+            let name = document.getElementById('cookieName').value;
+            let value = getCookie(name);
+            if(value === '')
+                alert('cookie not found');
+            else 
+                document.getElementById('cookieValue').value = value;
+            return false; 
+        }
+    </script>
+</body>
+</html>
