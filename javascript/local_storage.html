@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-3">
+                <form action="" onsubmit="return saveToLocalStorage();">
+                    <div class="card shadow">
+                        <div class="card-header text-bg-primary">
+                            <h3>Local Storage</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="keyName" class="form-label">Key Name</label>
+                                <input type="text" id="keyName" class="form-control" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="keyValue" class="form-label">Key value</label>
+                                <input type="text" id="keyValue" class="form-control" required />
+                            </div>
+
+                            <div>
+                                <button type="submit" class="btn btn-primary">Save/change</button>
+                                <button type="button" class="btn btn-info" onclick="getFromLocalStorage();">Get</button>
+                                <button type="button" class="btn btn-warning"
+                                    onclick="deleteKeyFromLocalStorage();">delete key</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        //1st technique
+        function saveToLocalStorage() {
+            //alert('form submitted');
+            //create local variable
+            let keyName = document.getElementById('keyName').value;
+            let keyValue = document.getElementById('keyValue').value;
+            console.log(keyName, keyValue);
+            //store to localstorage
+            localStorage.setItem(keyName, keyValue);
+
+            document.getElementById('keyName').value = "";
+            document.getElementById('keyValue').value = "";
+            alert('key value paired stored successfully');
+            return false;
+        }
+
+        //2nd technique
+        let getFromLocalStorage = function () {
+            let keyName = document.getElementById('keyName').value;
+            if (keyName === '') {
+                alert('please give key');
+            }
+            else {
+                let temp = localStorage.getItem(keyName);
+                console.log(temp);
+                if (temp === null)
+                    alert('no such key in local storage');
+                else {
+                    document.getElementById('keyValue').value = temp;
+                }
+            }
+        }
+        //3rd technique arrow function 
+        deleteKeyFromLocalStorage = () => {
+            let keyName = document.getElementById('keyName').value;
+            if (keyName === '') {
+                alert('please give key');
+            }
+            else {
+                let temp = localStorage.getItem(keyName);
+                console.log(temp);
+                if (temp === null)
+                    alert('no such key in local storage');
+                else {
+                    //delete key value 
+                    localStorage.removeItem(keyName);
+                    alert('key value pair has been deleted');
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

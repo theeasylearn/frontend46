@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HTML5 Geolocation</h1>
+    <h4>how to detect user location using browser? (no GPS)</h4>
+    <input type="button" value="get user Location" onclick="getLocation();" />
+    <div id="location"></div>
+    <script>
+        function getLocation()
+        {
+            //alert('get location');
+            //showLocation method is called only after location is fetched
+            navigator.geolocation.getCurrentPosition(showLocation);
+
+        }
+        function showLocation(userLocation)
+        {
+            console.log(userLocation);
+            let latitude = userLocation.coords.latitude;
+            let longitude = userLocation.coords.longitude;
+            document.getElementById('location').innerHTML = `Latitude = ${latitude} and longitude = ${longitude}`;
+            
+        }
+    </script>
+</body>
+</html>
