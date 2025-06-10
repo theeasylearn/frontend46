@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>session storage</h1>
+    <table border="1" width="100%">
+        <tr>
+            <td width="33.33%">
+                <a href="movie.zip">Download Movie 1</a>
+            </td>
+            <td width="33.33%">
+                <a href="movie.zip">Download Movie 2</a>
+            </td>
+            <td width="33.33%">
+                <a href="movie.zip">Download Movie 3</a>
+            </td>
+        </tr>
+        <tr>
+            <td width="33.33%">
+                <a href="movie.zip">Download Movie 4</a>
+            </td>
+            <td width="33.33%">
+                <a href="movie.zip">Download Movie 5</a>
+            </td>
+            <td width="33.33%">
+                <a href="movie.zip">Download Movie 6</a>
+            </td>
+        </tr>
+
+    </table>
+    <p>
+        <a href="session_storage.html">Next Page</a>
+    </p>
+    <script>
+        //create arrow function 
+        var temp = sessionStorage.getItem('count');
+        console.log(temp);
+        var count;
+        if (temp === null) {
+            sessionStorage.setItem('count', 1);
+            count = 1;
+        }
+        else {
+            count = parseInt(temp);
+        }
+        let downloadFile = () => {
+            if (count > 3) {
+                alert('you can download only 3 files');
+                return false;
+            }
+            else {
+                count++;
+                sessionStorage.setItem('count', count);
+                return true;
+            }
+        }
+        //create list(array) of anchor inside this page
+        let anchors = document.getElementsByTagName('a');
+        //now loop and set event 
+        for (index = 0; index < anchors.length - 1; index++) {
+            anchors[index].onclick = downloadFile;
+        }
+        //console.log(anchors);
+
+    </script>
+</body>
+
+</html>
