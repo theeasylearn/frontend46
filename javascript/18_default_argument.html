@@ -13,11 +13,11 @@
     var depth = parseInt(prompt('Enter depth'));
 
     var volume = getVolume(length,width,depth);
-    
-    document.write('3 argument volume ' + volume);
-    volume = getVolume(10,20); 
-    document.write('<br/> 2 argument volume ' + volume);
+    console.log(volume);
 
-    volume = getVolume(10); 
-    document.write('<br/> 1 argument volume ' + volume);
+    volume = getVolume(length,width);
+    console.log("2 arguments result",volume);
+
+    volume = getVolume(length);
+    console.log("1 arguments result",volume);
 </script>
