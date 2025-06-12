@@ -6,22 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        /* internal style */
         .gain-focus {
-            background-color: aliceblue;
+            background-color: aquamarine;
             color: blue;
-            box-shadow: 3px 3px 3px gray;
+            font-size: 20px;
+            border: 3px solid blue;
         }
 
         .lost-focus {
-            background-color: white;
+            background-color: whie;
             color: black;
-            box-shadow: none;
-        }
-
-        input {
-            padding: 5px;
-            border: 1px solid black;
-            font-size: larger;
+            font-size: 18px;
+            border: 2px solid gray;
         }
     </style>
 </head>
@@ -33,50 +30,90 @@
             <tr>
                 <td width="20%">Enter Amount</td>
                 <td width="30%">
-                    <input type="number" name="amount" id="amount" class="active" onfocus="handle_onfocus(this)"
-                        onblur="handle_onblur(this);" oninput="handle_onchange(this);" />
+                    <input type="number" name="amount" id="amount" onfocus="HightLightInput(this);"
+                        onblur="NormalizeInput(this);" oninput="convertToWords(this)" />
                 </td>
                 <td id="words"></td>
             </tr>
             <tr>
                 <td>Enter Account No</td>
                 <td>
-                    <input type="number" name="accno" id="accno" onfocus="handle_onfocus(this)"
-                        onblur="handle_onblur(this);" />
+                    <input type="number" name="accno" id="accno" onfocus="HightLightInput(this);"
+                        onblur="NormalizeInput(this);" />
                 </td>
                 </td>
-                <td ></td>
+                <td></td>
             </tr>
         </table>
     </form>
+    <script src="js/common2.js"></script>
     <script>
-        function handle_onfocus(tag) {
-            tag.className = "gain-focus";
+        function numberToWords(num) {
+            if (num === 0) return 'zero';
+
+            const belowTwenty = [
+                '', 'one', 'two', 'three', 'four', 'five', 'six',
+                'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve',
+                'thirteen', 'fourteen', 'fifteen', 'sixteen',
+                'seventeen', 'eighteen', 'nineteen'
+            ];
+
+            const tens = [
+                '', '', 'twenty', 'thirty', 'forty',
+                'fifty', 'sixty', 'seventy', 'eighty', 'ninety'
+            ];
+
+            const scales = [
+                '', 'thousand', 'million', 'billion'
+            ];
+
+            function helper(n) {
+                let word = '';
+                if (n < 20) {
+                    word = belowTwenty[n];
+                } else if (n < 100) {
+                    word = tens[Math.floor(n / 10)] + (n % 10 ? ' ' + belowTwenty[n % 10] : '');
+                } else {
+                    word = belowTwenty[Math.floor(n / 100)] + ' hundred' + (n % 100 ? ' ' + helper(n % 100) : '');
+                }
+                return word;
+            }
+
+            let word = '';
+            let scale = 0;
+
+            while (num > 0) {
+                let part = num % 1000;
+                if (part) {
+                    let prefix = helper(part);
+                    word = prefix + (scales[scale] ? ' ' + scales[scale] : '') + (word ? ' ' + word : '');
+                }
+                num = Math.floor(num / 1000);
+                scale++;
+            }
+
+            return word.trim();
         }
 
-        //
-        handle_onblur = (tag) => {
-            tag.className = "lost-focus";
+        //create arrow function 
+        let HightLightInput = (TextBox) => {
+            //apply css class using javascript
+            TextBox.className = "gain-focus";
         }
 
-        let handle_onchange = function(tag) {
-
-            let result = numberToWordsString(tag.value);
-            document.getElementById('words').innerHTML = result;
-        }
-        function numberToWordsString(amount) {
-            const digitWords = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
-
-            // Convert the number to a string and map each digit to its word
-            return amount
-                .toString()
-                .split('')
-                .map(digit => digitWords[parseInt(digit)])
-                .join(' ');
+        //1st method
+        function NormalizeInput(TextBox) {
+            TextBox.className = "lost-focus";
         }
 
-        // Example usage:
-       
+        //2nd method
+        let convertToWords = function (TextBox) {
+            let amount = TextBox.value;
+            console.log(amount);
+            let amountInWords =  numberToWords(amount);
+            console.log(amountInWords);
+            $("words").innerHTML = amountInWords
+        }
     </script>
 </body>
 
