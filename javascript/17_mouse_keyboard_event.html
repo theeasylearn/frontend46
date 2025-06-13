@@ -18,21 +18,24 @@
             width: calc(100vw/6);
             font-size: 48px;
             display: flex;
-            justify-content: center;
             /* horizontal alignment */
+            justify-content: center;
+            /* vertical alignment */
             align-items: center;
         }
 
+        /* class selector */
         .highlight {
             background-color: yellow;
             color: red;
         }
 
         .gradient {
-            background: #2A7B9B;
-            background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+            background: #ff2424;
+            background: radial-gradient(circle, rgba(255, 36, 36, 1) 0%, rgba(20, 54, 35, 1) 50%, rgba(47, 0, 255, 0.97) 100%);
         }
 
+        /* type selector style */
         textarea {
             border: 1px solid black;
             height: 300px;
@@ -59,10 +62,10 @@
     <script>
         //1st method
         function handle_click() {
-            alert('click event occured.');
+            alert('click event occurred.');
         }
 
-        //2nd method 
+        //arrow function method 
         handle_onmousever = (tag) => {
             //alert('handle on mouse over event');
             tag.innerHTML = "I Have focus";
