@@ -36,30 +36,28 @@
         </tr>
     </table>
     <script>
-        //create object 
+        //2nd technique to create object
         var MyMath = new Object({
-            //declare property variable
-            number1: 0,
-            number2: 0,
-            getInput:function()
+            //create state/property variable
+            number1 : 100,
+            number2 : 3,
+            getInput : function()
             {
-                //we can change property variable values in methods 
-                this.number1 = parseInt(prompt("Enter number 1",1));
-                this.number2 = parseInt(prompt("Enter number 2",1))
+                //accept input from user using javascript & store into property variable
+                this.number1 = prompt("enter number 1");
+                this.number2 = prompt("enter number 2");
             },
             display:function()
             {
                 document.getElementById('num1').innerHTML = this.number1;
                 document.getElementById('num2').innerHTML = this.number2;
             }
-            // addition:function()
+            //create addition,subtraction,multiplication, division function 
+            
         });
 
-        //create object variable
-        //syntax 
-        //var object-variable = new object; 
+        //1st create object variable
         var m1 = MyMath;
-
         m1.getInput();
         m1.display();
     </script>

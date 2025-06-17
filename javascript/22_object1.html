@@ -9,35 +9,26 @@
 
 <body>
     <h1>Create object using 1st method</h1>
+    <hr/>
+
     <script>
-        //create object using 1st method 
-        var MyMath = {
-            //property variable
-            number1: 10,
-            number2: 3,
-            //behavior 
-            display: function () {
-                console.log('display function called...');
-                //access property variable
-                console.log(this.number1, this.number2);
-            },
-            getAddition : function()
-            {
-                //it should result of addition
-                //create local variable result
-                let result = this.number1 + this.number2;
-                return result;
-            }
-            //exercise create getSubtraction, getMultiplication, getDivision function
+       let MyMath = {
+        // variables/state/properties
+          number1 :  100,
+          number2 : 3,
+          //methods 
+          getAdd()
+          {
+            //local variable 
+            let temp = this.number1 + this.number2;
+            return temp;
+          } 
+          //create function for subtraction, multiplication, division
+       };
 
-        }
-        //call MyMath object's function display
-        //objectname.functionname()
-        MyMath.display();
-
-        var result = MyMath.getAddition();
-        console.log("addition ",result);
-        console.log("number 1 " + MyMath.number1 + " number 2 " + MyMath.number2);
+       //call getAdd function of mymath object
+       let addition = MyMath.getAdd();
+       document.write("addition = " + addition);
     </script>
 </body>
 
