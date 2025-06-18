@@ -10,65 +10,39 @@
      <table border="1" align="center" cellpadding="10" width="50%" id="mytable">
         <tr>
             <td>Number 1</td>
-            <td id="num1"></td>
+            <td id="number1"></td>
         </tr>
         <tr>
             <td>Number 2</td>
-            <td id="num2"></td>
+            <td id="number2"></td>
         </tr>
+         <!-- add row to display result of addition, subtraction, multiplication, division. each row must have 2 td, 2nd td tag must have id -->
     </table>
     <script>
+        //create template using es6 way
         class MyMath 
         {
-            //create constructor function
             constructor(number1,number2)
             {
-                console.log('constructor called');
-                //create property variables
-                this.number1 = number1;
-                this.number2 = number2;
-                //display all property variable
-                console.log(this);
-            }
-            getInput()
-            {
-                this.number1 = parseInt(prompt("Enter number1",1));
-                this.number2 = parseInt(prompt("Enter number2",1));
+                console.log('construct called.....');
+                //property variables
+                this.num1 = number1;
+                this.num2 = number2;
             }
             display()
             {
-                document.getElementById('num1').innerHTML= this.number1;
-                document.getElementById('num2').innerHTML= this.number2;
+                document.getElementById('number1').innerHTML = this.num1;
+                document.getElementById('number2').innerHTML = this.num2;
             }
-            addition()
-            {
-                //here add is local variable
-                let add = this.number1 + this.number2;
-                console.log(add);
-                let td1 = document.createElement('td');
-                let td2 = document.createElement('td');
-
-                td1.innerHTML = "addition";
-                td2.innerHTML = add;
-                
-                let tr = document.createElement('tr');
-                tr.appendChild(td1);
-                tr.appendChild(td2);
-
-                document.getElementById('mytable').appendChild(tr);
-
-
-            }
-            //exercise subtraction, multiplication, division
+            
         }
-
-        //var object-variable-name = new classname()
-        var m1 = new MyMath(10,20); //constructor function automatically called therefore it is callback function
-        //call function 
-        //object-variable-name.function()
-        m1.getInput();
+        
+        //create object using class 
+        var m1 = new MyMath(10,15); //this line will automatically(implicitly) constructor
         m1.display();
-        m1.addition();
+
+        // var m2 = new MyMath(20,5); //this line will automatically(implicitly) constructor
+        // m2.display();
     </script>
 </body>
 </html>

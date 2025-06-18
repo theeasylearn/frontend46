@@ -18,42 +18,29 @@
             <td>Number 2</td>
             <td id="num2"></td>
         </tr>
+        <!-- add row to display result of addition, subtraction, multiplication, division. each row must have 2 td, 2nd td tag must have id -->
     </table>
     <script>
-        //create template
-        function MyMath(number1, number2) {
+        //3rd way to create object
+        //1st we create template(design)
+        function MyMath(number1,number2)
+        {
             //create property variable
-            this.number1 = number1;
-            this.number2 = number2;
-
-            //create function 
-            this.display = function () {
-                document.getElementById('num1').innerHTML = this.number1;
-                document.getElementById('num2').innerHTML = this.number2;
+            this.num1 = number1,
+            this.num2 = number2,
+            //there is only way to create function in function
+            this.display = function() {
+                document.getElementById('num1').innerHTML = this.num1;
+                document.getElementById('num2').innerHTML = this.num2;
             }
-            this.addition = function () {
-                let add = this.number1 + this.number2;
-                console.log(add);
-                let td1 = document.createElement('td');
-                let td2 = document.createElement('td');
 
-                td1.innerHTML = "addition";
-                td2.innerHTML = add;
-
-                let tr = document.createElement('tr');
-                tr.appendChild(td1);
-                tr.appendChild(td2);
-
-                document.getElementById('mytable').appendChild(tr);
-            }
-            //exercise subtraction, multiplication, division
         }
-        var num1 = parseInt(prompt("Enter number1", 1));
-        var num2 = parseInt(prompt("Enter number2", 1));
-        //var object-variable-name = new function()
-        var m1 = new MyMath(num1,num2); 
+        var number1 = parseInt(prompt("enter number 1"));
+        var number2 = parseInt(prompt("enter number 2"));
+        //create object variable using template
+        var m1 = new MyMath(number1,number2);
+
         m1.display();
-        m1.addition();
     </script>
 </body>
 
