@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        single level inheritance
+    </h1>
+    <hr>
+
+    <script>
+        class student
+        {
+            constructor(roll,mobile){
+                this.roll = roll;
+                this.mobile= mobile;
+            }
+
+            read(){
+                console.log("i can read....");
+            }
+
+            write(){
+                console.log("i can write....");
+            }
+
+            student_details(){
+                console.log(`roll no : ${this.roll}`);
+                console.log(`mobile no : ${this.mobile}`);
+            }
+        }
+
+        class person extends student{
+            constructor(roll,mobile,name,age)
+            {
+                super(roll,mobile);
+                this.name = name;
+                this.age = age;
+            }
+
+            walk()
+            {
+                console.log("i can walk....");
+            }
+            talk(){
+                console.log("i can talk....");
+            }
+
+            person_details()
+            {
+                console.log(`name : ${this.name}`);
+                console.log(`age : ${this.age}`);
+                console.log(`roll no : ${this.roll}`);
+                console.log(`mobile no : ${this.mobile}`);
+            }
+        }
+
+        var p1 = new person(101,1234567890,"devarsh",17);
+
+        p1.talk();
+        p1.walk();
+        p1.read();
+        p1.write();
+        p1.person_details();
+    </script>
+</body>
+</html>
