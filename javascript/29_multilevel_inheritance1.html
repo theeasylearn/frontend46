@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>
+        working with multilevel inheritance
+    </h1>
+
+    <!-- person -->
+    <!-- student -->
+    <!-- developer -->
+
+    <script>
+        class person{
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+
+            get_person(){
+                console.log(`person details`);
+                console.log(`name : ${this.name}`);
+                console.log(`age : ${this.age}`);
+            }
+        }
+
+        class student extends person{
+            constructor(name,age,roll){
+                super(name,age);
+                this.roll = roll;
+                this.school = "SPEI";
+            }
+
+            get_student()
+            {
+                console.log(`student details`);
+                console.log(`roll no : ${this.roll}`);
+                console.log(`school name : ${this.school}`);
+            }
+        }
+
+        class developer extends student{
+            constructor(name,age,roll,field){
+                super(name,age,roll)
+                this.field = field;
+            }
+
+            get_developer()
+            {
+                console.log(`developer details`);
+                console.log(`field : ${this.field}`);
+            }
+
+            get_all_details(){
+                super.get_person();
+                super.get_student();
+                this.get_developer();
+            }
+        }
+
+        var d1 = new developer("devrash",17,121,"web");
+        d1.get_all_details();
+
+    </script>
+</body>
+</html>
