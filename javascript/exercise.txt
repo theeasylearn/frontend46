@@ -5,3 +5,10 @@
     display data in bootstrap table format 
     use array of object 
 
+3) create page that take a number in form
+display odd in red box
+display even in green box
+
+4) create page that take anumber in form
+  5
+it check 1 to 5 is even or odd and display according box
