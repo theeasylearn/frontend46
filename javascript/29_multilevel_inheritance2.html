@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+            crossorigin="anonymous">
+    </head>
+    <body>
+
+        <!-- pi -->
+        <!-- circle area -->
+        <!-- cylinder area -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-6 mt-5 offset-3">
+                    <div class="card shadow">
+                        <div class="card-header text-bg-success">
+                            <h2>Cylinder Area</h2>
+                        </div>
+
+                        <div class="card-body" id="content">
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+            crossorigin="anonymous"></script>
+
+        <script>
+        class pi{
+            get_pi()
+            {
+                return 3.14159265359;
+            }
+        }
+
+        class circle extends pi{
+            constructor(r){
+                super();
+                this.r = r;
+            }
+
+            get_circle_area(){
+                var circle_area = super.get_pi() * this.r * this.r ; 
+                return circle_area;
+            }
+        }
+
+        class cylinder extends circle{
+            constructor(r,h){
+                super(r);
+                this.h = h;
+            }
+
+            get_cylinder_area()
+            {
+                var cylinder_area = (2*super.get_pi()*this.r*this.h) + (2* super.get_circle_area()); 
+
+                return cylinder_area ; 
+            }
+        }
+
+        var r = prompt("enter radius : ");
+        var h = prompt("enter height : ");
+
+        var c1 = new cylinder(r,h);
+        var ans = c1.get_cylinder_area().toFixed(2);
+        console.log(ans);
+
+        document.getElementById('content').innerHTML = `
+        <h4>radius : ${r}</h4>
+        <h4>height : ${h}</h4>
+        <h3>cylinder area : ${ans}</h3>` ; 
+        
+    </script>
+    </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 >
+        hirarchichal inheritance
+    </h1>
+
+    
+
+    <script>
+        class vehical{
+            constructor(seat,brand){
+                this.seat = seat ;
+                this.brand = brand ;
+            }
+
+            start(){
+                console.log("vehical started....");
+            }
+            
+            break()
+            {
+                console.log("vehical stopped....");
+
+            }
+        }
+
+        class car extends vehical{
+            constructor(seat,brand,engine,type){
+                super(seat,brand);
+                this.engine = engine;
+                this.type = type;
+            }
+
+            sunroof(){
+                console.log("sunroof oppened...");
+            }
+
+
+        }
+
+        class bike extends vehical{
+            constructor(seat,brand,fuel){
+                super(seat,brand);
+                this.fuel = fuel ;
+
+            }
+
+            helmet(){
+                console.log("wear helmet....");
+            }
+        }
+
+        var c1 = new car(4,'BMW','h122','electric');
+        var b1 = new bike(2,'BMW',3000);
+
+        c1.sunroof();
+        b1.helmet();
+        c1.start();
+        c1.break();
+
+        document.write(`<h2>fuel: ${b1.fuel}</h2><br>`);
+
+        b1.fuel <= 1000 ? document.write(`<div style="background-color: rgb(245, 38, 38); color:white; padding:10px; border:2px solid black;">
+        fuel is less!!!
+    </div>`) : document.write(`<div style="background-color: rgb(7, 161, 7);color:white; border:2px solid black; padding:10px;">
+        fuel is perfect...
+    </div>`);
+    </script>
+</body>
+</html>
