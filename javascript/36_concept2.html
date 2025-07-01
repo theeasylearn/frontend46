@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        working with promise,async,await
+    </h1>
+    
+
+    <script>
+        //var promise = new Promise((resolve,reject)=>{
+        //    console.log("promise message delivered....");
+        //    setTimeout(()=>{
+        //        console.log("id fetched");
+        //        reject("error");
+        //    },2000)
+        //})
+//
+        //console.log(promise);
+        //setTimeout(()=>{
+        //    console.log(promise);
+        //},2000)
+//
+        //promise.then((res)=>{
+        //    console.log(res);
+        //})
+//
+        //promise.catch((err)=>{
+        //    console.log(err);
+        //})
+
+        function getdata(id){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    console.log(`data id: ${id}`);
+                    resolve("success");
+                },2000);
+            })
+        }
+
+
+        async function getall()
+        {
+            await getdata(1);
+            await getdata(2);
+            await getdata(3);
+        }
+        
+        getall();
+
+       //getdata(1);
+       //getdata(2);
+       //getdata(3);
+
+       function add(a,b){
+           return a+b;
+        }
+        
+        function sub(a,b){
+            return a-b;
+        }
+        
+        //higher order function
+       function calculate(n1,n2,fun){
+            return fun(n1,n2);
+       }
+
+       console.log(calculate(2,3,add));
+       console.log(calculate(2,3,sub));
+    </script>
+</body>
+</html>
