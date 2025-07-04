@@ -2,7 +2,6 @@ var http = require('http');
 var server = http.createServer(function (request, response) {
     console.log(request.url);
     let output = `<!DOCTYPE html><html><head><title>404 - Page Not Found</title></head><body><h1>404</h1><h2>Page Not Found</h2><p>Sorry, the page you are looking for does not exist.</p><p><a href="/">Return to Home</a></p></body></html>`;
-
     if (request.url === '/') {
         output = `<!DOCTYPE html><html><head><title>Sample Page</title></head><body><h1>Welcome to My Sample Page</h1><p>This is a simple HTML-only page.</p><ul><li>Point One</li><li>Point Two</li><li>Point Three</li></ul><p>Thank you for visiting!</p></body></html>`;
     }
