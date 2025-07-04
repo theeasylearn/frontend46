@@ -1,0 +1,115 @@
+<!-- exeption - error -->
+<!-- syntax - runtime - logicle -->
+
+<!-- exeption handline -->
+<!-- abc -->
+<!-- abc - err -->
+<!-- abc  -->
+
+<!-- try - catch -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+            crossorigin="anonymous">
+    </head>
+    <body>
+
+        <h1>exeption handling</h1>
+        <hr>
+
+        <div class="conatiner">
+            <div class="row">
+                <div class="col-4 offset-4">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1"
+                                class="form-label">Number 1</label>
+                            <input type="number" class="form-control"
+                                id="num1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1"
+                                class="form-label">Number 2</label>
+                            <input type="number" class="form-control"
+                                id="num2">
+                        </div>
+
+                        <button type="submit"
+                            class="btn btn-primary"
+                            onclick="return div()">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 offset-4" id="content">
+
+                </div>
+            </div>
+        </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+            crossorigin="anonymous"></script>
+
+        <script>
+        console.log("hello world");
+
+        //try{
+        //    console.log(a);
+        //}
+        //catch(err){
+        //    console.log("some error occured....");
+        //    console.log("error :",err.message);
+        //}
+        //finally{
+//
+        //    console.log("good bye....");
+        //}
+
+        //var age = parseInt(prompt("enter your age : "));
+        //if(age<=18){
+        //    throw new Error('age is less then 18!!!');
+        //}
+
+
+        let div = () =>{
+            var ans;
+        try{
+            var n1 = parseInt(document.getElementById('num1').value);
+            var n2 = parseInt(document.getElementById('num2').value);
+
+            if(n2===0){
+                throw new Error('Not Divisible by zero');
+            }
+
+            //console.log(n1,n2);
+
+            if(isNaN(n1) || isNaN(n2)){
+                throw new Error('Give Both Number');
+            }
+            ans = n1/n2;
+            document.getElementById('content').innerHTML = `<h2 class="text-success">Result : ${ans}</h2>`
+        }
+        catch(err){
+            console.log(`some error`);
+            ans=err.message;
+
+            document.getElementById('content').innerHTML = `<h2 class="text-danger">Result : ${ans}</h2>`
+        }
+
+
+        return false;
+        }
+
+    </script>
+    </body>
+</html>

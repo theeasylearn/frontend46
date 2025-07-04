@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        concept of js
+    </h1>
+
+    <script>
+        //sync
+        console.log("a");
+        console.log("b");
+        console.log("c");
+
+        //async
+        //function hello(){
+        //    console.log("hello");
+        //}
+//
+        //setTimeout(hello,5000); //5s
+//
+        //setTimeout(()=>{
+        //    console.log("this is a function....");
+        //},2000);  //2s
+//
+        //console.log("good bye...");
+//
+//
+        //function calc(n1,n2,new_fun){
+        //    console.log(n1+n2);
+        //    new_fun();
+        //}
+//
+        //calc(2,3,hello);
+//
+        //function sub(a,b){
+        //    console.log(a-b);
+        //}
+//
+        //calc(10,20,()=>{
+        //    sub(2,1);
+        //})
+
+
+        function getdata(id,getnextdata){
+
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                console.log(`id : ${id}`);
+
+                if(id>5){
+                    reject("failed : quntity error....");
+                }
+                else{
+                    resolve("success : data fetched....");
+                }
+                if(getnextdata){
+                    getnextdata();
+                }
+            },5000);
+            })
+
+           
+        }
+
+        //getdata(1);  2s
+        //getdata(2);  2s
+        //getdata(3);  2s
+
+        //getdata(1,()=>{
+        //    console.log("loading data 2....");
+        //    getdata(2,()=>{
+        //        console.log("loading data 3....");
+        //        getdata(3)
+        //    })
+        //})
+
+        //var promise = new Promise((resolve,reject)=>{
+        //    console.log("this is promise....");
+        //    //reject("error");
+        //    //resolve("success");
+        //    
+        //});
+
+        let result = getdata(10);
+        console.log(result);
+        setTimeout(()=>{
+            console.log(result);
+
+        },5000);
+        
+
+
+
+    </script>
+</body>
+</html>

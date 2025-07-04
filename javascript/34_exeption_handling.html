@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>
+            write a program that display table from one number to second number
+        </h1>
+        <hr>
+
+        <div id="tables"></div>
+
+        
+        <script>
+        //2 x 1 = 2
+
+        var st = 2;
+        var en = 5;
+        var n = 2;
+        var count = 1;
+
+        for(let j=st ; j<=en ; j++){
+            for(let i=1 ; i<=10 ;i++){
+                document.getElementById('tables').innerHTML += `<br>${j} x ${i} = ${j*i}`;
+
+                
+            }
+
+        }
+
+        //console.log(`${n} x ${count} = ${n*count}`);
+//
+        //count++;
+        //console.log(`${n} x ${count} = ${n*count}`);
+
+
+
+    </script>
+    </body>
+</html>
