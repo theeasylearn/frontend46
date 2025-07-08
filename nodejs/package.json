@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "argon2": "^0.43.0",
+    "express": "^5.1.0",
+    "mysql": "^2.18.1",
+    "nodemailer": "^7.0.5"
+  }
+}
