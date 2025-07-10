@@ -1,0 +1,10 @@
+1) create nodejs example that will return 
+    1) all cricketers data
+    2) cricketer data of given name
+    3) cricketer data of of given age range 
+    4) cricketer data who has score more run then given run 
+    5) cricketer data who has played less match then given match 
+    6) cricketer data who has score more hundred then 50s 
+    7) cricketer data who has average between given range 
+    8) all the cricketer data average wise descending order 
+    9) all the cricketer data century wise in descending order 
