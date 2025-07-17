@@ -1,5 +1,5 @@
 var fs = require('fs');
-var now = require('./lib/datetime');
+var now = require('./datetime');
 var event = require('events');
 var em = new event.EventEmitter();
 
@@ -15,3 +15,5 @@ em.addListener("error", (data) => {
 em.on("error", (data) => {
     console.log('I will count no of events. if no of events exceed 5 i will stop system');
 });
+//required
+module.exports.em = em;

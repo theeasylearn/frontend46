@@ -8,3 +8,6 @@
     7) cricketer data who has average between given range 
     8) all the cricketer data average wise descending order 
     9) all the cricketer data century wise in descending order 
+
+    10) update error_handling.js file, if 5 error occures in 3 minutes then terminate nodejs server.
+    server.close()
