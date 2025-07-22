@@ -1,0 +1,48 @@
+structured query language
+
+db- table - row(item,record,tuple),column(perperty,atribute,field)
+
+(1,101,name,age....)
+(2,101,name,age....)
+(3,101,name,age....)
+
+mysql,oracal....
+
+table structure = schyma
+
+1) create a database
+create database databasename
+create database frontend46
+
+2) delete a database
+drop database databasename
+
+3) create a table
+create table tablename(
+    id int primary key auto_increment,
+    ....
+)
+
+CREATE TABLE employees(
+	id int PRIMARY KEY AUTO_INCREMENT,
+    name varchar(50),
+    age int,
+    salary int
+)
+
+4) drop table tablename
+drop table employees 
+
+5) rename table old to new
+rename table students to employees
+
+6) truncate table tablename
+truncate table students
+
+
+
+insert,update,delete,select
+--------------------------------------------
+1)insert - add row 
+    a) insert into table values("",....)
+    INSERT INTO students VALUES("","devarsh",17,"dev@gmail.com",1)
