@@ -46,3 +46,67 @@ insert,update,delete,select
 1)insert - add row 
     a) insert into table values("",....)
     INSERT INTO students VALUES("","devarsh",17,"dev@gmail.com",1)
+
+    b) insert into tablename(field) values(....)
+    INSERT INTO students(name,age,email,gender) VALUES("naman",12,"n2@gmail.com",1)
+
+    INSERT INTO students(name,age,email,gender) VALUES("ram",12,"ram@gmail.com",1),("shyam",12,"ram@gmail.com",1),("ram",11,"ram@gmail.com",1)
+
+
+2) update
+    change value of a field
+
+    update table set field=new value 
+    update students set age=20 where id=4
+
+    update students set email="abc@gmail.com","RAM" where name="ram"
+
+3) delete
+    delete table row
+
+    delete from tablename where condition
+    delete from students where age>15
+
+    delete from payments where amount between 10000 to 20000
+    amount>10000
+    amount<20000
+    DELETE FROM payments WHERE amount>10000 AND amount<20000
+    DELETE FROM payments where amount between(10000 AND 20000)
+
+    delete those record in payment from 2003-01-14 to 2003-02-14
+    delete from payments where date>="2003-01-14" and dat<="2003-02-14"
+
+    delete those record in payment of 11th month of 2003
+    DELETE FROM payments WHERE paymentDate>="2003-11-01" AND paymentDate<="2003-11-30"
+
+    delete those record in payment of 2003 year
+    DELETE FROM payments WHERE paymentDate>="2003-01-01" AND paymentDate<="2003-12-31"
+
+
+select
+fetch data - view data
+select *|<fieldname> from tablename where condition (group by) (having condition) (order by) (limit)
+
+    1) select * from tablename
+    SELECT * FROM payments
+
+
+    2) select specic field
+    select fieldname from payment
+    SELECT customerNumber,amount FROM payments
+    SELECT customerNumber,amount AS "total" FROM payments
+
+    SELECT customerNumber,amount AS "total" FROM payments WHERE customerNumber=141
+
+    select those offices from india,usa
+    select * from offices where country="INDIA" and country="UK"
+    select * from offices where country in("INDIA","UK")
+
+    select record in order of amount
+    select customerNumber,amount from payments order by amount
+
+    select customerNumber,amount from payments order by customerNumber
+    
+    select firstname from employees order by firstname
+
+
