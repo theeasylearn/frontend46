@@ -109,4 +109,68 @@ select *|<fieldname> from tablename where condition (group by) (having condition
     
     select firstname from employees order by firstname
 
+    select customerNumber,amount from payments order by amount DESC
 
+
+    limit
+    (start,size)
+    SELECT * FROM `payments` LIMIT 0,10
+
+
+    find the highest payment in payment table
+    select * from payments order by amount desc
+
+
+aggregate function
+number - return a single value
+1) min
+select min(amount) from payments
+
+2) max
+select max(amount) from payments
+
+3) avg
+select avg(amount) from payments
+
+4) sum
+select sum(amount) from payments
+
+5) count
+select count(amount) from payment
+select count(*) from payments
+
+group by
+when we want to group some records
+
+find each customer total payment amount
+select customerNumber,sum(amount) from payments GROUP BY customerNumber ORDER BY customerNumber DESC
+
+SELECT customerNumber,COUNT(amount) FROM payments GROUP BY customerNumber
+
+find total times of payents from payments table according to year
+SELECT year(paymentDate),COUNT(*) FROM payments GROUP BY year(paymentDate)
+
+find total times of payents from payments table according to month
+SELECT month(paymentDate),COUNT(*) FROM payments GROUP BY month(paymentDate)
+
+having
+when we have to give some condition on groups then use having
+SELECT customerNumber,COUNT(*) FROM payments GROUP BY customerNumber HAVING COUNT(*)>2
+
+find count of employees whos office code is 6 or 4
+select officeCode,COUNT(*) as "employees" FROM employees GROUP BY officeCode HAVING officeCode=6 or officeCode=4
+
+
+find customer name whos name starts with W
+SELECT firstName FROM employees WHERE firstName LIKE "W%"
+
+find customer name whos name end with W
+SELECT firstName FROM employees WHERE firstName LIKE "%w"
+
+find customer name whos has "a" in between the name
+SELECT firstName FROM employees WHERE firstName LIKE "%a%"
+
+
+distinct-unique value
+select country from offices
+select DISTINCT(country) from offices
