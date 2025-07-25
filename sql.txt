@@ -174,3 +174,30 @@ SELECT firstName FROM employees WHERE firstName LIKE "%a%"
 distinct-unique value
 select country from offices
 select DISTINCT(country) from offices
+
+---------------------------------------
+joins
+
+when we want to join 2 or more tables then we use joins
+
+inner join
+join 2 table with common field
+
+select * from customers as c inner join payments as p on c.id = p.cid
+select * from customers as c inner join orders as o on c.customer_id = o.customer_id
+
+left join
+joins 2 tables with all fields from left table and common field from right table
+
+select c.customer_id,c.first_name,o.item,o.amount from customers as c left join orders as o on c.customer_id = o.customer_id
+
+
+right join
+joins 2 tables with all fields from right table and common field from left table
+
+select c.customer_id,o.amount from customers as c right join orders as o on c.customer_id = o.customer_id
+
+full outer join
+joins 2 tables with all fields from right table and  from left table
+
+select * from customers as c full outer join orders as o on c.customer_id = o.customer_id
