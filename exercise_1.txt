@@ -8,3 +8,84 @@ Develop a wesite to make reader aware about Yoga.
     use html & html 5 
 
 language Hindi/gujarati
+
+
+----------------------------------------------------------------
+sql - exercises
+----------------------------------------------------------------
+✅ 5 UPDATE Tasks
+Update email of a specific customer.
+
+Increase total_amount by 10% for a particular order.
+
+Change quantity of a product in OrderItems.
+
+Rename a customer by ID.
+
+Set a fixed price for all items with quantity more than 3.
+
+❌ 5 DELETE Tasks
+Delete a customer by customer_id.
+
+Delete all orders with total_amount less than 150.
+
+Delete all order items with quantity equal to 1.
+
+Delete a specific order by order_id.
+
+Delete a customer using their email.
+
+🔢 5 GROUP BY Tasks
+Count total orders placed by each customer.
+
+Calculate total quantity sold for each product.
+
+Find average price of each product.
+
+Count customers by email domain.
+
+Sum total order value per customer.
+
+🧮 5 HAVING Tasks
+List products with total quantity sold greater than 3.
+
+Find customers with more than 1 order.
+
+Show products with average price greater than 50.
+
+Find orders with total item quantity greater than 3.
+
+Show email domains used by more than 1 customer.
+
+🔽 5 ORDER BY Tasks
+List customers sorted by name.
+
+List orders sorted by newest first.
+
+List items sorted by highest price.
+
+Show product names alphabetically.
+
+List customers by email domain.
+
+⏬ 5 LIMIT Tasks
+Display first 3 customers.
+
+Show latest 2 orders.
+
+List top 2 most expensive items.
+
+Show one customer with Gmail address.
+
+Display any 2 orders with amount > 100.
+
+🎯 5 Combined Tasks (GROUP BY + HAVING + ORDER BY + LIMIT)
+Top 2 products with highest quantity sold.
+
+Customers with more than 1 order, sorted by count.
+
+Products with average price > 40, ordered by price.
+
+Top 3 orders with most items.
+
+Top 2 email domains used more than once.

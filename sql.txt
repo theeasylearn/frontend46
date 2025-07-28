@@ -1,0 +1,203 @@
+structured query language
+
+db- table - row(item,record,tuple),column(perperty,atribute,field)
+
+(1,101,name,age....)
+(2,101,name,age....)
+(3,101,name,age....)
+
+mysql,oracal....
+
+table structure = schyma
+
+1) create a database
+create database databasename
+create database frontend46
+
+2) delete a database
+drop database databasename
+
+3) create a table
+create table tablename(
+    id int primary key auto_increment,
+    ....
+)
+
+CREATE TABLE employees(
+	id int PRIMARY KEY AUTO_INCREMENT,
+    name varchar(50),
+    age int,
+    salary int
+)
+
+4) drop table tablename
+drop table employees 
+
+5) rename table old to new
+rename table students to employees
+
+6) truncate table tablename
+truncate table students
+
+
+
+insert,update,delete,select
+--------------------------------------------
+1)insert - add row 
+    a) insert into table values("",....)
+    INSERT INTO students VALUES("","devarsh",17,"dev@gmail.com",1)
+
+    b) insert into tablename(field) values(....)
+    INSERT INTO students(name,age,email,gender) VALUES("naman",12,"n2@gmail.com",1)
+
+    INSERT INTO students(name,age,email,gender) VALUES("ram",12,"ram@gmail.com",1),("shyam",12,"ram@gmail.com",1),("ram",11,"ram@gmail.com",1)
+
+
+2) update
+    change value of a field
+
+    update table set field=new value 
+    update students set age=20 where id=4
+
+    update students set email="abc@gmail.com","RAM" where name="ram"
+
+3) delete
+    delete table row
+
+    delete from tablename where condition
+    delete from students where age>15
+
+    delete from payments where amount between 10000 to 20000
+    amount>10000
+    amount<20000
+    DELETE FROM payments WHERE amount>10000 AND amount<20000
+    DELETE FROM payments where amount between(10000 AND 20000)
+
+    delete those record in payment from 2003-01-14 to 2003-02-14
+    delete from payments where date>="2003-01-14" and dat<="2003-02-14"
+
+    delete those record in payment of 11th month of 2003
+    DELETE FROM payments WHERE paymentDate>="2003-11-01" AND paymentDate<="2003-11-30"
+
+    delete those record in payment of 2003 year
+    DELETE FROM payments WHERE paymentDate>="2003-01-01" AND paymentDate<="2003-12-31"
+
+
+select
+fetch data - view data
+select *|<fieldname> from tablename where condition (group by) (having condition) (order by) (limit)
+
+    1) select * from tablename
+    SELECT * FROM payments
+
+
+    2) select specic field
+    select fieldname from payment
+    SELECT customerNumber,amount FROM payments
+    SELECT customerNumber,amount AS "total" FROM payments
+
+    SELECT customerNumber,amount AS "total" FROM payments WHERE customerNumber=141
+
+    select those offices from india,usa
+    select * from offices where country="INDIA" and country="UK"
+    select * from offices where country in("INDIA","UK")
+
+    select record in order of amount
+    select customerNumber,amount from payments order by amount
+
+    select customerNumber,amount from payments order by customerNumber
+    
+    select firstname from employees order by firstname
+
+    select customerNumber,amount from payments order by amount DESC
+
+
+    limit
+    (start,size)
+    SELECT * FROM `payments` LIMIT 0,10
+
+
+    find the highest payment in payment table
+    select * from payments order by amount desc
+
+
+aggregate function
+number - return a single value
+1) min
+select min(amount) from payments
+
+2) max
+select max(amount) from payments
+
+3) avg
+select avg(amount) from payments
+
+4) sum
+select sum(amount) from payments
+
+5) count
+select count(amount) from payment
+select count(*) from payments
+
+group by
+when we want to group some records
+
+find each customer total payment amount
+select customerNumber,sum(amount) from payments GROUP BY customerNumber ORDER BY customerNumber DESC
+
+SELECT customerNumber,COUNT(amount) FROM payments GROUP BY customerNumber
+
+find total times of payents from payments table according to year
+SELECT year(paymentDate),COUNT(*) FROM payments GROUP BY year(paymentDate)
+
+find total times of payents from payments table according to month
+SELECT month(paymentDate),COUNT(*) FROM payments GROUP BY month(paymentDate)
+
+having
+when we have to give some condition on groups then use having
+SELECT customerNumber,COUNT(*) FROM payments GROUP BY customerNumber HAVING COUNT(*)>2
+
+find count of employees whos office code is 6 or 4
+select officeCode,COUNT(*) as "employees" FROM employees GROUP BY officeCode HAVING officeCode=6 or officeCode=4
+
+
+find customer name whos name starts with W
+SELECT firstName FROM employees WHERE firstName LIKE "W%"
+
+find customer name whos name end with W
+SELECT firstName FROM employees WHERE firstName LIKE "%w"
+
+find customer name whos has "a" in between the name
+SELECT firstName FROM employees WHERE firstName LIKE "%a%"
+
+
+distinct-unique value
+select country from offices
+select DISTINCT(country) from offices
+
+---------------------------------------
+joins
+
+when we want to join 2 or more tables then we use joins
+
+inner join
+join 2 table with common field
+
+select * from customers as c inner join payments as p on c.id = p.cid
+select * from customers as c inner join orders as o on c.customer_id = o.customer_id
+
+left join
+joins 2 tables with all fields from left table and common field from right table
+
+select c.customer_id,c.first_name,o.item,o.amount from customers as c left join orders as o on c.customer_id = o.customer_id
+
+
+right join
+joins 2 tables with all fields from right table and common field from left table
+
+select c.customer_id,o.amount from customers as c right join orders as o on c.customer_id = o.customer_id
+
+full outer join
+joins 2 tables with all fields from right table and  from left table
+
+select * from customers as c full outer join orders as o on c.customer_id = o.customer_id
