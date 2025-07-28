@@ -3,6 +3,7 @@
     "argon2": "^0.43.0",
     "express": "^5.1.0",
     "mysql": "^2.18.1",
-    "nodemailer": "^7.0.5"
+    "nodemailer": "^7.0.5",
+    "path-to-regexp": "^8.2.0"
   }
 }
