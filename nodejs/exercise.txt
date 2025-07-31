@@ -11,3 +11,5 @@
 
     10) update error_handling.js file, if 5 error occures in 3 minutes then terminate nodejs server.
     server.close()
+
+    11) create another middleware which convert all uppercase inputs into lowercase input and forware request to route
