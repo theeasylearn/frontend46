@@ -13,3 +13,17 @@
     server.close()
 
     11) create another middleware which convert all uppercase inputs into lowercase input and forware request to route
+
+    12) create api on users table for below operations
+
+        register (make sure email & mobile must not exist in table )
+        login 
+        change password
+            user should be able to change password
+        forgot password 
+                genarate random password & store as password 
+                send new password on registered email t
+        update profile
+            user should be able to change name,dob,country
+        user table 
+            id,email,mobile,password,name,dob,country

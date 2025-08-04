@@ -1,15 +1,5 @@
-var express = require('express');
-var bodyparser = require('body-parser');
 var connection = require("./connection");
-var app = express();
-//define middleware 
-app.use(express.urlencoded({ extended: true }));
-app.use(bodyparser.json());
-const ROUTE = "/contact";
-//use Post Method to insert new contact 
-//input : email,mobile,name,detail
-//all input is required
-app.post(ROUTE, function (request, response) {
+function insert(request, response) {
     var email = request.body.email;
     var mobile = request.body.mobile;
     var name = request.body.name;
@@ -32,19 +22,8 @@ app.post(ROUTE, function (request, response) {
         });
     }
     // console.log(email,mobile,name,detail);
-});
-
-
-//http://localhost:5000/contact
-//fetch all contacts 
-
-// fetch all contact whose email is abc
-//http://localhost:5000/contact?email=abc
-
-//http://localhost:5000/contact?id=1
-// fetch all contact whose id = 1
-
-app.get(ROUTE, function (request, response) {
+}
+ function select (request, response) {
     //object destructring
     let { id, email } = request.query;
     console.log(id, email);
@@ -74,11 +53,9 @@ app.get(ROUTE, function (request, response) {
             }
         }
     })
-});
+}
 
-//delete specific contact 
-//input : email (required)
-app.delete(ROUTE, function (request, response) {
+function del (request, response) {
     var email = request.body.email;
     if (email === undefined) {
         response.json([{ 'error': 'input is missing' }]);
@@ -99,11 +76,8 @@ app.delete(ROUTE, function (request, response) {
         })
     }
 
-});
-
-//update specific contact
-//input : email, mobile, name, detail
-app.put(ROUTE, function (request, response) {
+}
+function update (request, response) {
     var email = request.body.email;
     var mobile = request.body.mobile;
     var name = request.body.name;
@@ -127,6 +101,8 @@ app.put(ROUTE, function (request, response) {
             }
         });
     }
-});
-app.listen(5000);
-console.log('ready to accept request');
+}
+module.exports.insert = insert;
+module.exports.select = select;
+module.exports.remove = del;
+module.exports.update = update;
