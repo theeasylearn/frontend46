@@ -7,8 +7,8 @@ module.exports.Email = function (receiver, subject, message) {
         this.subject = subject,
         this.message = message,
         this.send = function () {
-            var sender = 'tempm7777@gmail.com';
-            var password = 'wahe iifl jzoi apax';
+            var sender = 'pilolmic@gmail.com';
+            var password = 'vdrk pokg ffvb yffq ';
             var MailSender = nodemailer.createTransport({
                 host: 'smtp.gmail.com',
                 port: 587,
