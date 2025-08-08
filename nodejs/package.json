@@ -5,6 +5,7 @@
     "mongodb": "^4.13.0",
     "mysql": "^2.18.1",
     "nodemailer": "^7.0.5",
-    "path-to-regexp": "^8.2.0"
+    "path-to-regexp": "^8.2.0",
+    "pug": "^3.0.3"
   }
 }

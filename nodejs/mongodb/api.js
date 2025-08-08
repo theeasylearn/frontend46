@@ -20,19 +20,37 @@ app.post(ROUTE, (request, response) => {
 });
 
 // READ - Get all data
+//localhost:5000/system
+// READ - Give no of documents 
+//localhost:5000/system?limit=3
+
 app.get(ROUTE, (request, response) => {
     dbPromise.then((database) => {
-        database.collection('data').find({}).toArray((error, documents) => {
-            if (error != null) {
-                response.json([{ 'error': 'error occured' }]);
-                console.log(error);
-            }
-            else 
-            {
-                documents.unshift({'error':'no'},{'total':documents.size});
-                response.json(documents);
-            }
-        });
+        let input = request.query;
+        if (input.limit === undefined) {
+            database.collection('data').find({}).toArray((error, documents) => {
+                if (error != null) {
+                    response.json([{ 'error': 'error occured' }]);
+                    console.log(error);
+                }
+                else {
+                    documents.unshift({ 'error': 'no' }, { 'total': documents.length });
+                    response.json(documents);
+                }
+            });
+        }
+        else {
+            database.collection('data').find({}).limit(parseInt(input.limit)).toArray((error, documents) => {
+                if (error != null) {
+                    response.json([{ 'error': 'error occured' }]);
+                    console.log(error);
+                }
+                else {
+                    documents.unshift({ 'error': 'no' }, { 'total': documents.length });
+                    response.json(documents);
+                }
+            });
+        }
     })
 });
 
