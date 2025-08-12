@@ -1,0 +1,89 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Branch Details
+    style.
+      body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f9fc;
+      margin: 0;
+      padding: 0;
+      }
+      .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      padding: 24px;
+      gap: 32px;
+      }
+      .branch-photo {
+      flex-shrink: 0;
+      }
+      .branch-photo img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.12);
+      }
+      .details {
+      flex: 1;
+      }
+      h2 {
+      color: #333;
+      margin-top: 0;
+      }
+      .info {
+      margin: 14px 0;
+      display: flex;
+      }
+      .label {
+      font-weight: bold;
+      color: #444;
+      width: 120px;
+      }
+      .value {
+      color: #666;
+      }
+      .value a {
+      color: #007BFF;
+      text-decoration: none;
+      }
+      .value a:hover {
+      text-decoration: underline;
+      }
+      @media (max-width: 650px) {
+      .container {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 16px;
+      }
+      .branch-photo img {
+      width: 100%;
+      height: auto;
+      }
+      }
+  body
+    .container
+      .branch-photo
+        img(src='https://picsum.photos/180/180?random=1', alt='Branch Photo')
+      .details
+        h2 Branch Details
+        .info
+          .label Branch Name:
+          .value #{name}
+        .info
+          .label Address:
+          .value #{address}
+        .info
+          .label Contact No:
+          .value #{mobile}
+        .info
+          .label Email:
+          .value
+            a(href='#{email}') #{email}
