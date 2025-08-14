@@ -1,4 +1,6 @@
 var express = require('express')
+var connection = require("./connection");
+
 var app = express();
 app.set("view engine", "pug");
 app.set("views", "views");
@@ -103,11 +105,215 @@ app.get("/nine", function (request, response) {
         isCaptain: false
     };
 
-    console.log(cricketer);
+    //console.log(cricketer);
 
     response.render('nine', {
-        player: cricketer
+        player: cricketer,
     });
+
+
+});
+
+app.get("/ten", function (request, response) {
+    const teamPlayers = [
+        {
+            name: "Rohit Sharma",
+            age: 38,
+            country: "India",
+            role: "Batsman",
+            battingStyle: "Right-hand bat",
+            bowlingStyle: "Right-arm offbreak",
+            matchesPlayed: 450,
+            totalRuns: 19000,
+            centuries: 50,
+            isCaptain: true
+        },
+        {
+            name: "Hardik Pandya",
+            age: 32,
+            country: "India",
+            role: "All-rounder",
+            battingStyle: "Right-hand bat",
+            bowlingStyle: "Right-arm fast-medium",
+            matchesPlayed: 280,
+            totalRuns: 8000,
+            centuries: 12,
+            isCaptain: false
+        },
+        {
+            name: "Yashasvi Jaiswal",
+            age: 23,
+            country: "India",
+            role: "Batsman",
+            battingStyle: "Left-hand bat",
+            bowlingStyle: "Legbreak",
+            matchesPlayed: 50,
+            totalRuns: 1500,
+            centuries: 2,
+            isCaptain: false
+        },
+        {
+            name: "Virat Kohli",
+            age: 36,
+            country: "India",
+            role: "Batsman",
+            battingStyle: "Right-hand bat",
+            bowlingStyle: "Right-arm medium",
+            matchesPlayed: 500,
+            totalRuns: 25000,
+            centuries: 80,
+            isCaptain: false
+        },
+        {
+            name: "Suryakumar Yadav",
+            age: 34,
+            country: "India",
+            role: "Batsman",
+            battingStyle: "Right-hand bat",
+            bowlingStyle: "Right-arm medium",
+            matchesPlayed: 150,
+            totalRuns: 4000,
+            centuries: 3,
+            isCaptain: false
+        },
+        {
+            name: "Rishabh Pant",
+            age: 27,
+            country: "India",
+            role: "Wicketkeeper-batsman",
+            battingStyle: "Left-hand bat",
+            bowlingStyle: "—",
+            matchesPlayed: 150,
+            totalRuns: 5000,
+            centuries: 5,
+            isCaptain: false
+        },
+        {
+            name: "Sanju Samson",
+            age: 31,
+            country: "India",
+            role: "Wicketkeeper-batsman",
+            battingStyle: "Right-hand bat",
+            bowlingStyle: "—",
+            matchesPlayed: 120,
+            totalRuns: 3500,
+            centuries: 2,
+            isCaptain: false
+        },
+        {
+            name: "Shivam Dube",
+            age: 31,
+            country: "India",
+            role: "All-rounder",
+            battingStyle: "Left-hand bat",
+            bowlingStyle: "Right-arm medium",
+            matchesPlayed: 60,
+            totalRuns: 1200,
+            centuries: 0,
+            isCaptain: false
+        },
+        {
+            name: "Ravindra Jadeja",
+            age: 36,
+            country: "India",
+            role: "All-rounder",
+            battingStyle: "Left-hand bat",
+            bowlingStyle: "Left-arm orthodox",
+            matchesPlayed: 350,
+            totalRuns: 6000,
+            centuries: 3,
+            isCaptain: false
+        },
+        {
+            name: "Axar Patel",
+            age: 31,
+            country: "India",
+            role: "All-rounder",
+            battingStyle: "Left-hand bat",
+            bowlingStyle: "Left-arm orthodox",
+            matchesPlayed: 150,
+            totalRuns: 2000,
+            centuries: 0,
+            isCaptain: false
+        },
+        {
+            name: "Kuldeep Yadav",
+            age: 30,
+            country: "India",
+            role: "Bowler",
+            battingStyle: "Left-hand bat",
+            bowlingStyle: "Left-arm wrist spin",
+            matchesPlayed: 120,
+            totalRuns: 500,
+            centuries: 0,
+            isCaptain: false
+        },
+        {
+            name: "Yuzvendra Chahal",
+            age: 34,
+            country: "India",
+            role: "Bowler",
+            battingStyle: "Right-hand bat",
+            bowlingStyle: "Right-arm legbreak",
+            matchesPlayed: 150,
+            totalRuns: 400,
+            centuries: 0,
+            isCaptain: false
+        },
+        {
+            name: "Arshdeep Singh",
+            age: 26,
+            country: "India",
+            role: "Bowler",
+            battingStyle: "Left-hand bat",
+            bowlingStyle: "Left-arm fast-medium",
+            matchesPlayed: 80,
+            totalRuns: 200,
+            centuries: 0,
+            isCaptain: false
+        },
+        {
+            name: "Jasprit Bumrah",
+            age: 32,
+            country: "India",
+            role: "Bowler",
+            battingStyle: "Right-hand bat",
+            bowlingStyle: "Right-arm fast",
+            matchesPlayed: 310,
+            totalRuns: 2000,
+            centuries: 0,
+            isCaptain: false
+        },
+        {
+            name: "Mohammed Siraj",
+            age: 31,
+            country: "India",
+            role: "Bowler",
+            battingStyle: "Right-hand bat",
+            bowlingStyle: "Right-arm fast",
+            matchesPlayed: 120,
+            totalRuns: 300,
+            centuries: 0,
+            isCaptain: false
+        }
+    ];
+    //console.log(cricketer);
+    response.render('ten', {
+        players: teamPlayers,
+    });
+});
+
+app.get("/site", function (request, response) {
+    //step 1 
+    //create sql command 
+    var sql = "select message,name from feedback order by id desc";
+    //step 2 
+    //run sql command
+    connection.con.query(sql, function (error, result) {
+        response.render('site', {
+            testimonials: result
+        });
+    })
 });
 
 app.listen(5000);
