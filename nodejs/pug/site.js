@@ -1,10 +1,11 @@
-var express = require('express')
+var express = require('express');
+var path = require('path');
 var connection = require("./connection");
 
 var app = express();
 app.set("view engine", "pug");
 app.set("views", "views");
-
+app.use(express.static(path.join(__dirname, 'public')));
 //crete route 
 app.get("/one", function (request, response) {
     response.render('one')
@@ -304,17 +305,38 @@ app.get("/ten", function (request, response) {
 });
 
 app.get("/site", function (request, response) {
-    //step 1 
-    //create sql command 
-    var sql = "select message,name from feedback order by id desc";
-    //step 2 
-    //run sql command
-    connection.con.query(sql, function (error, result) {
+    // Define SQL queries
+    var feedbackSql = "select message, name from feedback order by id desc";
+    var menuSql = "select * from menu order by id desc";
+
+    // Execute both queries in parallel
+    Promise.all([
+        new Promise((resolve, reject) => {
+            connection.con.query(feedbackSql, function (error, result) {
+                if (error) reject(error);
+                resolve(result);
+            });
+        }),
+        new Promise((resolve, reject) => {
+            connection.con.query(menuSql, function (error, result) {
+                if (error) reject(error);
+                resolve(result);
+            });
+        })
+    ])
+    .then(([feedbackResult, menuResult]) => {
+        // Render the template with both datasets
         response.render('site', {
-            testimonials: result
+            testimonials: feedbackResult,
+            menu: menuResult
         });
     })
+    .catch(error => {
+        console.error('Error executing queries:', error);
+        response.status(500).send('Internal Server Error');
+    });
 });
+
 
 app.listen(5000);
 console.log('ready to accept request');
