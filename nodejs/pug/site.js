@@ -2,7 +2,13 @@ var express = require('express');
 var path = require('path');
 var connection = require("./connection");
 
+// below 3 lines required to access data submitted by post method
+var bodyparser = require('body-parser');
+//define middleware 
 var app = express();
+app.use(express.urlencoded({ extended: true }));
+app.use(bodyparser.json());
+
 app.set("view engine", "pug");
 app.set("views", "views");
 app.use(express.static(path.join(__dirname, 'public')));
@@ -324,18 +330,39 @@ app.get("/site", function (request, response) {
             });
         })
     ])
-    .then(([feedbackResult, menuResult]) => {
-        // Render the template with both datasets
-        response.render('site', {
-            testimonials: feedbackResult,
-            menu: menuResult
+        .then(([feedbackResult, menuResult]) => {
+            // Render the template with both datasets
+            response.render('site', {
+                testimonials: feedbackResult,
+                menu: menuResult
+            });
+        })
+        .catch(error => {
+            console.error('Error executing queries:', error);
+            response.status(500).send('Internal Server Error');
         });
-    })
-    .catch(error => {
-        console.error('Error executing queries:', error);
-        response.status(500).send('Internal Server Error');
-    });
 });
+
+app.post("/site", function (request, response) {
+    
+    var fullname = request.body.fullname;
+    var email = request.body.email;
+    var message = request.body.message;
+
+    console.log(fullname,email,message);
+    // create sql command
+    var sql = `INSERT INTO inquiry(name, email, detail) VALUES (?,?,?)`;
+    var data = [fullname,email,message];
+
+    connection.con.query(sql,data,function(error,result){
+        if(error)
+            response.send('oops something went wrong, contact admin');
+        else 
+        {
+            response.redirect('/site');
+        }
+    });
+})
 
 
 app.listen(5000);

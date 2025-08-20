@@ -1,7 +1,7 @@
 var express = require('express');
-var bodyparser = require('body-parser');
 var connection = require("./connection");
 var app = express();
+var bodyparser = require('body-parser');
 //define middleware 
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyparser.json());

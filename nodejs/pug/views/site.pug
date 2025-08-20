@@ -124,18 +124,22 @@ html(lang='en')
         h2.text-center.mb-5 Contact Us
         .row.justify-content-center
           .col-md-6
-            form
+            form#contactForm(method='post', action='site')
               .mb-3
                 label.form-label(for='name') Name
-                input#name.form-control(type='text', placeholder='Your Name')
+                input#name.form-control(type='text', placeholder='Your Name',name='fullname')
               .mb-3
                 label.form-label(for='email') Email
-                input#email.form-control(type='email', placeholder='Your Email')
+                input#email.form-control(type='email', placeholder='Your Email',name='email')
               .mb-3
                 label.form-label(for='message') Message
-                textarea#message.form-control(rows='5', placeholder='Your Message')
+                textarea#message.form-control(rows='5', placeholder='Your Message',name='message')
               button.btn.btn-primary.w-100(type='submit') Send Message
     // Footer
     footer.bg-dark.text-white.text-center.py-4
       p &copy; 2025 Ngopi. All rights reserved.
     script(src='/js/bootstrap.bundle.min.js')
+    script.
+      document.getElementById('contactForm').addEventListener('submit', function(event) {
+        alert("Contact form submitted successfully!");
+      });
