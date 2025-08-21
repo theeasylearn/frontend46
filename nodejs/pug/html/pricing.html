@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BPLAY - Pricing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f8fa;
+        }
+        .header {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 20px 0;
+            position: relative;
+        }
+        .header .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .header .nav-link {
+            color: white !important;
+            margin-left: 15px;
+        }
+        .header .btn {
+            background-color: #4b5cc4;
+            color: white;
+            border: none;
+        }
+        .header-title {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .pricing-section {
+            padding: 50px 0;
+            text-align: center;
+        }
+        .pricing-section h6 {
+            color: #64748b;
+            font-weight: bold;
+        }
+        .pricing-section h2 {
+            color: #1e293b;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .pricing-section p {
+            color: #64748b;
+            margin-bottom: 40px;
+        }
+        .pricing-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .pricing-card.popular {
+            background-color: #4b5cc4;
+            color: white;
+            border: none;
+        }
+        .pricing-card.popular .btn {
+            background-color: white;
+            color: #4b5cc4;
+        }
+        .pricing-card h5 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+        .pricing-card .price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .pricing-card ul li {
+            margin-bottom: 10px;
+        }
+        .pricing-card .btn {
+            background-color: #4b5cc4;
+            color: white;
+            width: 100%;
+        }
+        .faq-section {
+            padding: 50px 0;
+            background-color: #e0e7ff;
+            text-align: center;
+        }
+        .faq-section h6 {
+            color: #64748b;
+            font-weight: bold;
+        }
+        .faq-section h2 {
+            color: #1e293b;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .faq-section p {
+            color: #64748b;
+            margin-bottom: 40px;
+        }
+        .faq-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .footer {
+            background-color: #1e293b;
+            color: white;
+            padding: 30px 0;
+        }
+        .footer h5 {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+        .footer h6 {
+            color: #93c5fd;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        .footer a {
+            color: #93c5fd;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer .social-icons a {
+            margin-right: 10px;
+        }
+        .footer .text-center p {
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#">B<span style="color: #4b5cc4;">PLAY</span></a>
+                <div class="collapse navbar-collapse justify-content-end">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Team</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
+                        <li class="nav-item"><a class="nav-link btn" href="#">Sign In</a></li>
+                        <li class="nav-item"><a class="nav-link btn" href="#">Sign Up</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="header-title">Pricing Page</div>
+    </header>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <h6>Pricing</h6>
+            <h2>Our Pricing Plans</h2>
+            <p>There are many variations of passages of lorem ipsum available but the majority have suffered alteration in some form.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="pricing-card">
+                        <h5>STARTING FROM</h5>
+                        <div class="price">$19.99/mo</div>
+                        <ul>
+                            <li>5 User</li>
+                            <li>All UI components</li>
+                            <li>Lifetime access</li>
+                            <li>Free updates</li>
+                            <li>Use on 1 (one) project</li>
+                            <li>4 Months support</li>
+                        </ul>
+                        <button class="btn btn-primary">Purchase Now</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pricing-card popular">
+                        <h5>POPULAR</h5>
+                        <div class="price">$30.99/mo</div>
+                        <ul>
+                            <li>5 User</li>
+                            <li>All UI components</li>
+                            <li>Lifetime access</li>
+                            <li>Free updates</li>
+                            <li>Use on 1 (one) project</li>
+                            <li>4 Months support</li>
+                        </ul>
+                        <button class="btn btn-primary">Purchase Now</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pricing-card">
+                        <h5>STARTING FROM</h5>
+                        <div class="price">$70.99/mo</div>
+                        <ul>
+                            <li>5 User</li>
+                            <li>All UI components</li>
+                            <li>Lifetime access</li>
+                            <li>Free updates</li>
+                            <li>Use on 1 (one) project</li>
+                            <li>4 Months support</li>
+                        </ul>
+                        <button class="btn btn-primary">Purchase Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h6>FAQ</h6>
+            <h2>Any Questions? Answered</h2>
+            <p>There are many variations of passages of lorem ipsum available but the majority have suffered alteration in some form.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="faq-card">
+                        <h5>How to use UIdeck?</h5>
+                    </div>
+                    <div class="faq-card">
+                        <h5>How to download Icons from Lineicons?</h5>
+                    </div>
+                    <div class="faq-card">
+                        <h5>Is GrayGrids part of UIdeck?</h5>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="faq-card">
+                        <h5>Can I use this templates for commercial project?</h5>
+                    </div>
+                    <div class="faq-card">
+                        <h5>Do you have plan releasing Play Pro?</h5>
+                    </div>
+                    <div class="faq-card">
+                        <h5>Where and how to host this template?</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>B<span style="color: #4b5cc4;">PLAY</span></h5>
+                    <p>We create digital experiences for brands and companies by using technology.</p>
+                    <div class="social-icons"><a href="#"><i class="fab fa-facebook-f"></i></a> <a href="#"><i class="fab fa-twitter"></i></a> <a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+                </div>
+                <div class="col-md-2">
+                    <h6>About Us</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Testimonial</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6>Features</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">How it works</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                        <li><a href="#">Terms of service</a></li>
+                        <li><a href="#">Refund policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6>Our Products</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Lineicons</a></li>
+                        <li><a href="#">Ecommerce HTML</a></li>
+                        <li><a href="#">Ayro UI</a></li>
+                        <li><a href="#">Linea Admin</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>Partners</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Ayro UI</a></li>
+                        <li><a href="#">GrayGrids</a></li>
+                        <li><a href="#">UIdeck</a></li>
+                        <li><a href="#">Lineicons</a></li>
+                        <li><a href="#">Tailwind Templates</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>Privacy policy | Support policy | Terms of service</p>
+                <p>Designed and Developed by UIdeck</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>

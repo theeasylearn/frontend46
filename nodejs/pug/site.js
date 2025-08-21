@@ -362,8 +362,20 @@ app.post("/site", function (request, response) {
             response.redirect('/site');
         }
     });
-})
+});
 
+
+app.get("/aboutus",function(request,response){
+    response.render("aboutus");
+});
+
+app.get("/contactus",function(request,response){
+    response.render("contactus");
+});
+
+app.get("/pricing",function(request,response){
+    response.render("pricing");
+});
 
 app.listen(5000);
 console.log('ready to accept request');
