@@ -1,0 +1,17 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+//create variables
+var a = 10
+var b = 2
+var output = (<div>
+        <ul>
+            <li>Addition {a+b}</li>
+            <li>Subtraction {a-b}</li>
+            <li>Multiplication {a*b}</li>
+            <li>Division {a/b}</li>
+        </ul>
+    </div>)
+root.render(output);

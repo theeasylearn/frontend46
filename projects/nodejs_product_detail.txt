@@ -1,0 +1,47 @@
+Technology
+-----------------
+HTML, CSS, JS, Bootstrap framework, Nodejs, MYSQL
+
+Duration
+-------------------------
+15 day 
+submission Date : 05-09-2025
+
+
+
+Description
+-------------------------------------------
+Trust
+    reference https://www.shishuvihar.in
+
+    Home 
+    About us 
+    Activites 
+    Reports 
+    Gallary
+    Contact us 
+    Testimonials
+    Donate 
+Admin Panel (admin theme)
+------------------------------------
+    Activites
+        INSERT/UPDATE/DELETE/VIEW 
+    Reports
+        INSERT/UPDATE/DELETE/VIEW 
+    Gallary
+        INSERT/UPDATE/DELETE/VIEW 
+    Testimonials
+        INSERT/UPDATE/DELETE/VIEW 
+Task 
+--------------------------------
+1) search Bootstrap 5 theme (paid)
+2) html page designing 
+3) convert into pug 
+4) database connectivity
+    Database create 
+    Actual insert 
+    Route development 
+    render request to pug file along with data 
+5) free nodejs hosting(research)
+
+
