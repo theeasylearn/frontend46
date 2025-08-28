@@ -6,3 +6,11 @@ making detail
 apply attractive style to it using class and css file 
 
 2) create reactjs example to display 5 student 3 subject marks, total average as html table. use html, css, do calculate total and average usind JSX Expression 
+
+
+3) create your resume using bootstrap cdn
+
+4) create register page for online shopping using bootstrap package.
+
+5) create interest calculator page using bootstrap package.
+
