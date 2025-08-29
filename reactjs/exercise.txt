@@ -14,3 +14,10 @@ apply attractive style to it using class and css file
 
 5) create interest calculator page using bootstrap package.
 
+functions 
+-------------------------------------
+
+6) create function which will display player names of indian cricket team selected fo asia cup 2025. use bootstrap 
+
+7) create function which will display names of all the zodiac sign using bootstrap. 
+
