@@ -17,7 +17,20 @@ apply attractive style to it using class and css file
 functions 
 -------------------------------------
 
-6) create function which will display player names of indian cricket team selected fo asia cup 2025. use bootstrap 
+6) create function which will display player names of indian cricket team selected for asia cup 2025. use bootstrap 
 
 7) create function which will display names of all the zodiac sign using bootstrap. 
 
+8) modify example 6_decision_making.js, display name of the month instead of month number. 
+
+9) further modify exercise no 8 and display Divas And Ratri choghadiya in attaractive format.
+    Divas : Labh, Amrut, Shubh, Chal, Udveg, kal 
+    Ratro : Amrut, Shubh, Chal, Udveg, kal, Labh
+
+use below link to get choghadia
+http://www.shreehindutemple.net/wp-content/uploads/2011/06/choghadia-gujarati.gif
+
+also hightlight current choghadia
+
+10) create function which will display player names of indian cricket team selected for asia cup 2025. use bootstrap (if player is batter display bat icon, if player is baller display ball icon, if player is allrounder display bat and ball icon, if player wicket keeper display wicket glovals icon, if player is captain display Cap icon.)
+    use iconfinder for icon or fontawasome 

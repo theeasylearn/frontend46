@@ -2,70 +2,70 @@
 import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './clock.css';
+//create object Date Library class
+let today = new Date(); 
+//create object
+let current = {
+    day:today.getDate(),
+    month:today.getMonth()+1,
+    year:today.getFullYear(),
+    hour:today.getHours(),
+    minute:today.getMinutes(),
+    second:today.getSeconds(),
+    weekday: today.getDay()
+}
 
-
-function getDateTime() {
-    //create object Date Library class
-    let today = new Date();
-    //create object
-    let now = {
-        day: today.getDate(),
-        month: today.getMonth() + 1,
-        year: today.getFullYear(),
-        hour: today.getHours(),
-        minute: today.getMinutes(),
-        second: today.getSeconds(),
-        weekday: today.getDay()
-    }
+function getDateTime(now) {
     //use decision making statement if else to decide whether to show AM/PM after time 
     let ampm = '';
-    if (now.hour < 12) {
+    if(now.hour<12)
+    {
         ampm = 'AM';
     }
-    else {
-        now.hour -= 12;
+    else 
+    {
+        now.hour -= 12; 
         ampm = 'PM';
     }
     // alert(now.weekday);
     //use switch to decide name of day 
     let dayName = '';
-    switch (now.weekday) {
+    switch(now.weekday)
+    {
         case 1:
             dayName = 'Monday';
-            break;
+        break;
 
         case 2:
             dayName = 'Tuesday';
-            break;
+        break;
 
         case 3:
             dayName = 'Wednesday';
-            break;
+        break;
 
         case 4:
             dayName = 'Thursday';
-            break;
+        break;
 
         case 5:
             dayName = 'Friday';
-            break;
+        break;
 
         case 6:
             dayName = 'Saturday';
-            break;
+        break;
 
         case 7:
             dayName = 'Sunday';
-            break;
+        break;
     }
-    let output = (<div className="full-screen">
+    return (<div className="full-screen">
         <div className="time-card">
             <div className="date">{dayName} {now.day} / {now.month} / {now.year}</div>
             <div className="time">{now.hour}:{now.minute}:{now.second} {ampm}</div>
         </div>
     </div>)
-    root.render(output); //calling function which must return JSX
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));
-
-setInterval(getDateTime,1000)
+root.render(getDateTime(current)); //calling function which must return JSX
