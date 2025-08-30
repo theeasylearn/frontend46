@@ -53,7 +53,7 @@ function getDateTime() {
         case 6:
             dayName = 'Saturday';
             break;
-
+ 
         case 7:
             dayName = 'Sunday';
             break;
