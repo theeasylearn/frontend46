@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Thrones - Official Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #1c2526; /* Dark gray background */
+            color: #f4e4bc; /* Light gold text */
+        }
+        .navbar {
+            background-color: #4a0e0e; /* Deep crimson */
+        }
+        .navbar-brand img {
+            height: 40px;
+        }
+        .carousel-item img {
+            height: 600px;
+            object-fit: cover;
+        }
+        .section-padding {
+            padding: 60px 0;
+        }
+        .character-card, .photo-card {
+            transition: transform 0.3s;
+            background-color: #2e2e2e; /* Darker gray for cards */
+        }
+        .character-card:hover, .photo-card:hover {
+            transform: scale(1.05);
+        }
+        .testimonial-card {
+            background-color: #3b1a1a; /* Dark crimson for testimonials */
+            padding: 20px;
+            border-radius: 10px;
+            color: #f4e4bc;
+        }
+        .footer {
+            background-color: #1a0f0f; /* Very dark crimson */
+            padding: 20px 0;
+        }
+        .nav-link, .footer a {
+            color: #d4a017 !important; /* Gold for links */
+        }
+        .nav-link:hover, .footer a:hover {
+            color: #f4e4bc !important; /* Lighter gold on hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://via.placeholder.com/40x40?text=Dragon+Logo" alt="Dragon Logo">
+                Game of Thrones
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#story">Story</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#characters">Characters</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#photos">Photos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Slider -->
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=600&q=80" class="d-block w-100" alt="Epic Throne Scene">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Game of Thrones</h1>
+                    <p>Epic Fantasy Awaits</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=600&q=80" class="d-block w-100" alt="Dragon in Flight">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Battle for the Throne</h1>
+                    <p>Join the Epic Saga</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Story Section -->
+    <section id="story" class="section-padding">
+        <div class="container">
+            <h2 class="text-center mb-5">The Story</h2>
+            <p class="lead text-center">
+                In the mythical continent of Westeros, several powerful families fight for control of the Iron Throne. 
+                As seasons change and ancient threats emerge, noble houses navigate treachery, dragons, and political intrigue 
+                in an epic struggle for power. Follow the tales of honor, betrayal, and destiny in *Game of Thrones*.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Characters Section -->
+    <section id="characters" class="section-padding bg-secondary">
+        <div class="container">
+            <h2 class="text-center mb-5">Main Characters</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card character-card text-white">
+                        <img src="https://images.unsplash.com/photo-1506794778202-6d8d61e2f7f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=400&q=80" class="card-img-top" alt="Jon Snow">
+                        <div class="card-body">
+                            <h5 class="card-title">Jon Snow</h5>
+                            <p class="card-text">The honorable bastard of House Stark, destined for greatness.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card character-card text-white">
+                        <img src="https://images.unsplash.com/photo-1515886657613-9d3515b0c78f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=400&q=80" class="card-img-top" alt="Daenerys Targaryen">
+                        <div class="card-body">
+                            <h5 class="card-title">Daenerys Targaryen</h5>
+                            <p class="card-text">Mother of Dragons, seeking to reclaim her birthright.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card character-card text-white">
+                        <img src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=400&q=80" class="card-img-top" alt="Tyrion Lannister">
+                        <div class="card-body">
+                            <h5 class="card-title">Tyrion Lannister</h5>
+                            <p class="card-text">The witty and cunning dwarf of House Lannister.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photos Section -->
+    <section id="photos" class="section-padding">
+        <div class="container">
+            <h2 class="text-center mb-5">Photos</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card photo-card">
+                        <img src="https://images.unsplash.com/photo-1519742866993-66d3cfef4bbd?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200&q=80" class="card-img-top" alt="Battle Scene">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card photo-card">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200&q=80" class="card-img-top" alt="Winterfell">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card photo-card">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200&q=80" class="card-img-top" alt="Dragon">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials Section -->
+    <section id="testimonials" class="section-padding bg-secondary">
+        <div class="container">
+            <h2 class="text-center mb-5">What Fans Say</h2>
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                    <div class="testimonial-card text-center">
+                        <p>"An epic saga that keeps you on the edge of your seat!"</p>
+                        <h5>- John D.</h5>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="testimonial-card text-center">
+                        <p>"The best fantasy series ever made. Dragons, battles, and intrigue!"</p>
+                        <h5>- Sarah K.</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2025 Game of Thrones. All rights reserved.</p>
+            <p>Follow us: 
+                <a href="#" class="mx-2">Twitter</a> | 
+                <a href="#" class="mx-2">Facebook</a> | 
+                <a href="#" class="mx-2">Instagram</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

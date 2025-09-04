@@ -68,116 +68,52 @@ function Aboutus() {
         </div>
     </section>);
 }
+
+function MenuItem(props) {
+    // this props is object has 3 key (name,price,photo) which has value passed with it
+    return (<div className="col-md-3">
+        <div className="card text-center">
+            <img src={props.photo} className="card-img-top" alt="Item 1" />
+            <div className="card-body">
+                <h5 className="card-title text-white">{props.name}</h5>
+                <p className="card-text text-white">Rs. {props.price}</p>
+            </div>
+        </div>
+    </div>);
+}
 function FoodMenu() {
     return (<section id="menu" className="fade-in">
         <div className="container">
             <h2 className="text-center mb-5">Our Menu</h2>
             <div className="row g-4">
-                <div className="col-md-3">
-                    <div className="card text-center">
-                        <img src="https://picsum.photos/300/200/?random=1" className="card-img-top" alt="Item 1" />
-                        <div className="card-body">
-                            <h5 className="card-title">Spicy Tuna Roll</h5>
-                            <p className="card-text">$12.99</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-3">
-                    <div className="card text-center">
-                        <img src="https://picsum.photos/300/200/?random=2" className="card-img-top" alt="Item 2" />
-                        <div className="card-body">
-                            <h5 className="card-title">Grilled Salmon</h5>
-                            <p className="card-text">$18.99</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-3">
-                    <div className="card text-center">
-                        <img src="https://picsum.photos/300/200/?random=3" className="card-img-top" alt="Item 3" />
-                        <div className="card-body">
-                            <h5 className="card-title">Veggie Stir Fry</h5>
-                            <p className="card-text">$10.99</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-3">
-                    <div className="card text-center">
-                        <img src="https://picsum.photos/300/200/?random=4" className="card-img-top" alt="Item 4" />
-                        <div className="card-body">
-                            <h5 className="card-title">Beef Burger</h5>
-                            <p className="card-text">$14.99</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-3">
-                    <div className="card text-center">
-                        <img src="https://picsum.photos/300/200/?random=5" className="card-img-top" alt="Item 5" />
-                        <div className="card-body">
-                            <h5 className="card-title">Pasta Primavera</h5>
-                            <p className="card-text">$13.99</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-3">
-                    <div className="card text-center">
-                        <img src="https://picsum.photos/300/200/?random=6" className="card-img-top" alt="Item 6" />
-                        <div className="card-body">
-                            <h5 className="card-title">Chicken Curry</h5>
-                            <p className="card-text">$15.99</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-3">
-                    <div className="card text-center">
-                        <img src="https://picsum.photos/300/200/?random=7" className="card-img-top" alt="Item 7" />
-                        <div className="card-body">
-                            <h5 className="card-title">Chocolate Lava Cake</h5>
-                            <p className="card-text">$8.99</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-3">
-                    <div className="card text-center">
-                        <img src="https://picsum.photos/300/200/?random=8" className="card-img-top" alt="Item 8" />
-                        <div className="card-body">
-                            <h5 className="card-title">Fresh Salad</h5>
-                            <p className="card-text">$9.99</p>
-                        </div>
-                    </div>
-                </div>
+                <MenuItem name='Pizza' price='300' photo='https://picsum.photos/300/200/?random=2' />
+                <MenuItem name='Burger' price='100' photo='https://picsum.photos/300/200/?random=3' />
+                <MenuItem name='Pav bhaji' price='200' photo='https://picsum.photos/300/200/?random=4' />
+                <MenuItem name='Dosa' price='150' photo='https://picsum.photos/300/200/?random=5' />
             </div>
         </div>
     </section>);
+}
+function CustomerReview(props) {
+    // this prop is object it has 2 keys (fullname, detail) which has value passed in it.
+    return (<div className="col-md-6">
+        <div className="testimonial-card p-4 text-center">
+            <p>{props.detail}</p>
+            <h6>{props.fullname}</h6>
+        </div>
+    </div>);
+
 }
 function Testimonials() {
     return (<section id="testimonials" className="bg-secondary fade-in">
         <div className="container">
             <h2 className="text-center mb-5 text-white">What Our Customers Say</h2>
             <div className="row g-4">
-                <div className="col-md-6">
-                    <div className="testimonial-card p-4 text-center">
-                        <p>"Amazing food and service! The fusion flavors are out of this world."</p>
-                        <h6>- John Doe</h6>
-                    </div>
-                </div>
-                <div className="col-md-6">
-                    <div className="testimonial-card p-4 text-center">
-                        <p>"Cozy atmosphere and delicious dishes. Highly recommend!"</p>
-                        <h6>- Jane Smith</h6>
-                    </div>
-                </div>
-                <div className="col-md-6">
-                    <div className="testimonial-card p-4 text-center">
-                        <p>"Best restaurant in town. The menu is innovative and fresh."</p>
-                        <h6>- Mike Johnson</h6>
-                    </div>
-                </div>
-                <div className="col-md-6">
-                    <div className="testimonial-card p-4 text-center">
-                        <p>"Loved the desserts! Will be back soon."</p>
-                        <h6>- Emily Davis</h6>
-                    </div>
-                </div>
+                <CustomerReview fullname='Rajan joshi' detail='Delicisious food, best in town' />
+                <CustomerReview fullname='Milan' detail='Best dosa, authentic taste of sound' />
+                <CustomerReview fullname='Ankit Patel' detail='Very testy' />
+                <CustomerReview fullname='Rutvik parmar' detail='I Like food, service and enviroment' />
+
             </div>
         </div>
     </section>);

@@ -34,3 +34,15 @@ also hightlight current choghadia
 
 10) create function which will display player names of indian cricket team selected for asia cup 2025. use bootstrap (if player is batter display bat icon, if player is baller display ball icon, if player is allrounder display bat and ball icon, if player wicket keeper display wicket glovals icon, if player is captain display Cap icon.)
     use iconfinder for icon or fontawasome 
+
+
+11) create one page site for any 1 IPL franchesee 
+    it should have at least 8 sections like menu, slider, updates, photos, players, ipl point table etc. 
+    convert it to jsx. use functional components. if html code is repatative then use reusable functional components. 
+
+    reference 
+    https://www.gujarattitansipl.com/
+    https://www.mumbaiindians.com/
+    https://www.delhicapitals.in/
+
+
