@@ -46,3 +46,10 @@ also hightlight current choghadia
     https://www.delhicapitals.in/
 
 
+12) create react example which will provide options to display & update football score board.
+    display 2 team name, logo, goals and also display which team has lead. provide plus, minute button for both team to increase/decrease gloal 
+
+
+13) create react example which will provide options to display & update kabaddi score board. 
+    display 2 team name, logo and points. also hight point of that which has leads  and provide 7 round shape button for each team. which can be enabled or disabeled when scorer click on it.
+
