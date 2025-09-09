@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Closer function </h1>
+    <button type="button" onclick="increaseCounter();">Counter</button>
+    <h2 id="output"></h2>
+    <script>
+        // below is not good way to write because of global variable
+        // //create global variable
+        // var count = 0;
+        // function increaseCounter(){
+        //     count++;
+        //     document.getElementById('output').innerHTML = count;
+        // }
+        //below is preferred way to create variable which not global yet we can maintain it 
+        //outer function
+        function outer() {
+            let count = 0;
+            function inner() {
+                count++; //inner function can access/change outer function variable
+                return count;
+            }
+            return inner; //call inner function
+        }
+
+        // create the closure once
+        const counter = outer();
+        //constant variable which store the reference of outer function 
+        
+        function increaseCounter() {
+            const value = counter(); //calling function via closure
+            document.getElementById('output').innerHTML  = value;
+        }
+    </script>
+</body>
+
+</html>

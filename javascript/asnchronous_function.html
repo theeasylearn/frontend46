@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function taskA()
+        {
+            console.log('please wait for task A to finish');
+            setTimeout(() => {
+                console.log('task A completed....');
+            },1000); //code will execute after 1000 milisecond delay (1 second)
+            
+        }
+        function taskB()
+        {
+            console.log('please wait for task B to finish');
+            setTimeout(() => {
+                console.log('task B completed....');
+            },500); //code will execute after 500 milisecond delay (0.5 second)
+        }
+        function taskC()
+        {
+            
+            console.log('please wait for task C to finish');
+            setTimeout(() => {
+                console.log('task C completed....');
+            },250); //code will execute after 1000 milisecond delay (0.25 second)
+        }
+        //calling function (synchronosly)
+        taskA();
+        taskB();
+        taskC();
+    </script>
+</body>
+</html>
