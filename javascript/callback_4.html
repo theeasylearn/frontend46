@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>calling api </h1>
+    <table border="2" align="center" width="80%">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>userid</th>
+                <th>title</th>
+            </tr>
+        </thead>
+        <tbody id="output">
+            <tr>
+                <td colspan="4" align="center">
+                    <h2>Getting Data, please wait</h2>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        function fetchDataFromServer(url, showData) {
+            console.log("Fetching data from server, please wait....");
+            fetch(url).then((response) => response.json()).then((list) => { showData(list) })
+        }
+        function showData(list) {
+            console.log('....');
+            console.log(list);//
+            let temp = ``;
+            for (let index = 0; index < list.length; index++) {
+                temp += `<tr>
+                    <td>${list[index]['id']}</td>
+                    <td>${list[index]['userId']}</td>
+                    <td>${list[index]['title']}</td>
+                    </tr>`;
+            }
+            document.getElementById('output').innerHTML = temp;
+        }
+        let url = "https://jsonplaceholder.typicode.com/albums";
+        fetchDataFromServer(url, (list) => showData(list));
+    </script>
+</body>
+
+</html>

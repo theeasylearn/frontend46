@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>callback</h1>
+    <b>use console (press ctrl+k)</b>
+    <script>
+        function fetchDataFromServer(anotherFunction)
+        {
+            console.log("Fetching data from server, please wait....");
+            setTimeout(() => {
+                let IGotResponse = "I have fetched data....";
+                anotherFunction(IGotResponse);
+            },2000);
+        }
+        fetchDataFromServer((response) => console.log(response));
+    </script>
+</body>
+</html>
