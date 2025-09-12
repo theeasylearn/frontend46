@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Promise</h1>
+    <b>use console</b>
+    <script>
+        var fetchData = new Promise((resolve,reject) => {
+            console.log("Processing, please wait....");
+            let number = Math.round(Math.random());
+            console.log(number);
+            setTimeout(() => {
+                if(number == 1)
+                      resolve("data fetched successfuly"); //if resolve execute then, then block will execute
+                else 
+                      reject("Operation failed..."); //if reject execute, then catch block will execute
+            },5000);
+        });
+
+        fetchData.then((msg) => console.log(msg)).catch((error) => console.error(error));
+    </script>
+</body>
+</html>
