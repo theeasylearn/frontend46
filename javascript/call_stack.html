@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>example of call stack</h1>
+    <div id="output"></div>
+    <script>
+        //store the reference of html tag whose id is output
+        var output = document.getElementById('output'); 
+        function A()
+        {
+            console.log('A function called...');
+            output.innerHTML+= `<p>A function called...</p>`;
+        }
+        function B()
+        {
+            A();
+            console.log('B function called...');
+            output.innerHTML+= `<p>B function called...</p>`;
+        }
+        function C()
+        {
+            B();
+            console.log('C function called...');
+            output.innerHTML+= `<p>C function called...</p>`;
+        }
+        function D()
+        {
+            C();
+            console.log('D function called...');
+            output.innerHTML+= `<p>D function called...</p>`;
+        }
+        //call function
+        D();
+    </script>
+</body>
+</html>
