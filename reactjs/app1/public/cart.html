@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solo Stove Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .cart-header {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .item-img {
+            max-width: 100px;
+            max-height: 100px;
+        }
+        .text-orange {
+            color: #f7931e;
+        }
+        .text-muted {
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="cart-header text-center">
+            <h2>Your Cart</h2>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-2">
+                                <img src="http://picsum.photos/200?random=1" alt="Pizza Oven" class="item-img">
+                            </div>
+                            <div class="col-2">
+                                <h5 class="card-title">Pi Pizza Oven</h5>
+                                <p class="text-muted">Estimated Ship Date: June 6th<br>Fuel Source: Wood Only <a href="#" class="text-decoration-none">Change</a></p>
+                            </div>
+                            <div class="col-2 text-center">
+                                <p class="card-text">$469.99</p>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <button class="btn btn-outline-secondary" type="button">-</button>
+                                    <input type="text" class="form-control text-center" value="1" readonly>
+                                    <button class="btn btn-outline-secondary" type="button">+</button>
+                                </div>
+                            </div>
+                            <div class="col-2 text-end">
+                                <p class="card-text">$469.99 <span class="text-muted">x</span></p>
+                            </div>
+                            <div class="col-2">
+                                <button class="btn btn-danger">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
