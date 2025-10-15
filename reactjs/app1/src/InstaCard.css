@@ -1,0 +1,19 @@
+body{
+    background-color:rgb(238, 238, 151);
+}
+.container{
+    margin-top: 70px;
+}
+.card-img{
+    height: 500px;
+    width: 545px;
+}
+.content{
+    padding: 20px;
+}
+.btn{
+    margin-left: 10px;
+}
+.button{
+    margin-left: -10px;
+}
